@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CIS 223 - JavaScript - Day 1</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <script src="evaluator-element.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>CIS 223 - JavaScript</h1>
+          <p>Instructor: Caleb Foss (they/them) 🤖</p>
+        </section>
+        <section>
+          <h2>Instructor</h2>
+          <p>Call me Caleb!</p>
+          <p>(or Prof. Foss is fine)</p>
+          <p>They/them pronouns</p>
+          <p>
+            as in, &quot;A strange person approaches in the distance! What in
+            the world are <em>they</em> doing?!&quot;
+          </p>
+        </section>
+        <section>
+          <section>
+            <h2>About me</h2>
+          </section>
+          <section>
+            <figure>
+              <img src="img/introToPhysics.jpg" />
+              <figcaption>Started out in experimental film</figcaption>
+            </figure>
+          </section>
+          <section>
+            <figure>
+              <img src="img/FossPortrait.png" />
+              <figcaption>Transitioned to digital media art</figcaption>
+            </figure>
+          </section>
+          <section>
+            <p>
+              Taught game design, physical computing, creative coding, 3D
+              modeling, and user experience design at UIC and DePaul.
+            </p>
+          </section>
+          <section>
+            <p>Began developing and contributing to open source projects.</p>
+            <figure>
+              <img src="img/osacc2.webp" />
+              <figcaption>
+                At the Open Source Arts Contributors Conference
+              </figcaption>
+            </figure>
+          </section>
+          <section>
+            <p>Joined the JJC faculty last year, and I love it!</p>
+          </section>
+          <section>
+            <figure>
+              <img src="img/lostCoaster.jpg" />
+              <figcaption>I am also a roller coaster nerd</figcaption>
+            </figure>
+          </section>
+        </section>
+
+        <section>
+          <h2>Drawing Experiment</h2>
+        </section>
+
+        <section>
+          <h2>Talking to the Browser</h2>
+          <p>
+            In your browser, open the developer tools and navigate to the
+            console.
+          </p>
+          <p>
+            If you're using Edge, Chrome, or Firefox on Windows, the shortcut
+            for that is
+          </p>
+          <p>ctrl + shift + i</p>
+          <p>or f12</p>
+        </section>
+        <section>
+          <h2>Very Brief History of JavaScript</h2>
+          <p class="fragment">
+            First released in 1995 with Netscape's Navigator browser
+          </p>
+          <p class="fragment">
+            Java is a totally different programming language (confusingly)
+          </p>
+          <p class="fragment">
+            Standardized by the European Computer Manufacturers Association
+            (ECMA) as ECMAScript since 1997
+          </p>
+        </section>
+        <section>
+          <h2>Oops JS is Used for Everything Now</h2>
+          <p class="fragment">
+            Desktop programs / apps with tools like Node, Deno, and Bun
+          </p>
+          <p class="fragment">
+            Mobile apps with tools like React Native and Flutter
+          </p>
+          <p class="fragment">Games with engines like Phaser</p>
+          <p class="fragment">Scripting in Adobe software</p>
+          <p class="fragment">This slideshow!</p>
+        </section>
+        <section>
+          <img
+            src="img/stackoverflow-dev-survey-2024-technology-most-popular-technologies-language-prof-social.png"
+          />
+        </section>
+        <section>
+          <h2>Class Interests</h2>
+          <img src="img/interests.png" />
+        </section>
+        <section><h2>Syllabus</h2></section>
+        <section>
+          <h2>Group Brainstorm</h2>
+          <p>
+            What platform(s) do you prefer to communicate with classmates /
+            instructor outside of class?
+          </p>
+          <p>What would make you more comfortable asking for help?</p>
+          <p>
+            What method would be best for getting technical help from classmates
+            outside of class?
+          </p>
+        </section>
+        <section>
+          <h2>Class Project</h2>
+          <h3>Some general options:</h3>
+          <ul>
+            <li class="fragment">Form validator</li>
+            <li class="fragment">Super simple 2D game</li>
+            <li class="fragment">Sound / music generator</li>
+            <li class="fragment">Interactive animation</li>
+          </ul>
+        </section>
+        <section>
+          <section><h2>Expression</h2></section>
+          <section>
+            <p>Evaluates to a single value</p>
+            <code>1 + 1</code>
+          </section>
+          <section>
+            <h3>Ingredients</h3>
+            <ul>
+              <li class="fragment">Values</li>
+              <li class="fragment">Operators</li>
+              <li class="fragment">Function Calls</li>
+              <li class="fragment">Constants &amp Variables</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h2>Data Types</h2>
+          <img
+            src="https://media.giphy.com/media/znFOMXuHVkV36qzdbJ/giphy.gif"
+            height="400"
+          />
+        </section>
+        <section>
+          <section><h2>String</h2></section>
+          <section>
+            <h3>Definition &amp Syntax</h3>
+            <p>Text data</p>
+            <p>Between 'single quotes', "double quotes", or `back ticks`</p>
+            <input value="'this is a string'" />
+          </section>
+          <section>
+            <h3>Operators</h3>
+            <table style="width: 80%">
+              <tr>
+                <th>Operator</th>
+                <th>Action</th>
+                <th>Example</th>
+              </tr>
+              <tr>
+                <td>+</td>
+                <td>Concatenate</td>
+                <td>
+                  <pre><code >"hello " + "world" === "hello world"</code></pre>
+                </td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h3>Try it!</h3>
+            <ul>
+              <li class="fragment">'single quotes'</li>
+              <li class="fragment">"double quotes"</li>
+              <li class="fragment">`back ticks`</li>
+              <li class="fragment">+</li>
+            </ul>
+            <div class="evaluator">
+              <input />
+              <code></code>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section><h2>Number</h2></section>
+          <section>
+            <h3>Definition &amp Syntax</h3>
+            <p>Integer (whole) or float (decimal)</p>
+            <p>
+              Digits, decimal, and underscore (useful for spacing out big
+              numbers)
+            </p>
+            <input value="123" />
+          </section>
+          <section>
+            <h3>Operators</h3>
+            <table style="width: 80%">
+              <tr>
+                <th>Operator</th>
+                <th>Action</th>
+                <th>Example</th>
+              </tr>
+              <tr class="fragment">
+                <td>+</td>
+                <td>Add</td>
+                <td>
+                  <pre><code class="language-js">1 + 2 === 3</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>-</td>
+                <td>Subtract</td>
+                <td>
+                  <pre><code class="language-js">3 - 2 === 1</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>*</td>
+                <td>Multiply</td>
+                <td>
+                  <pre><code class="language-js">2 * 3 === 6</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>/</td>
+                <td>Divide</td>
+                <td>
+                  <pre><code class="language-js">6 / 3 === 2</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>**</td>
+                <td>Exponentiate</td>
+                <td>
+                  <pre><code class="language-js">2 ** 3 === 8</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>%</td>
+                <td>Modulus</td>
+                <td>
+                  <pre><code class="language-js">3 % 2 === 1</code></pre>
+                </td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h3>Try it!</h3>
+            <ul>
+              <li class="fragment">+</li>
+              <li class="fragment">-</li>
+              <li class="fragment">*</li>
+              <li class="fragment">/</li>
+              <li class="fragment">**</li>
+              <li class="fragment">%</li>
+            </ul>
+            <div class="evaluator">
+              <input />
+              <code></code>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section><h2>Boolean</h2></section>
+          <section>
+            <figure>
+              <img
+                src="https://66.media.tumblr.com/7cba682c2de193a43de762e4d99d951c/tumblr_inline_nyxgt8YMsr1sovaks_1280.jpg"
+                height="500"
+              />
+              <figcaption>George Boole</figcaption>
+            </figure>
+          </section>
+          <section>
+            <h3>Definition &amp Syntax</h3>
+            <p>true/false</p>
+            <p>lowercase</p>
+            <p>can be evaluated by comparing other values</p>
+            <p>The <em>color of the sky</em> is <em>blue</em></p>
+          </section>
+          <section>
+            <h3>Comparison Operators</h3>
+            <table style="width: 80%">
+              <tr>
+                <th>Operator</th>
+                <th>Action</th>
+                <th>Example</th>
+              </tr>
+              <tr class="fragment">
+                <td>&gt</td>
+                <td>Greater than</td>
+                <td>
+                  <pre><code class="language-js">2 &gt 1 === true</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>&lt</td>
+                <td>Less than</td>
+                <td>
+                  <pre><code class="language-js">2 &lt 1 === false</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>&gt=</td>
+                <td>Greater or equal</td>
+                <td>
+                  <pre><code class="language-js">1 &gt= 1 === true</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>&lt=</td>
+                <td>Less or equal</td>
+                <td>
+                  <pre><code class="language-js">1 &lt= 1 === true</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>==</td>
+                <td>Truthy equal</td>
+                <td>
+                  <pre><code class="language-js">1 == "1" === true</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>===</td>
+                <td>Equal</td>
+                <td>
+                  <pre><code class="language-js">1 === "1" === false</code></pre>
+                </td>
+              </tr>
+              <tr class="fragment">
+                <td>!==</td>
+                <td>Not equal</td>
+                <td>
+                  <pre><code class="language-js">1 !== 2 === true</code></pre>
+                </td>
+              </tr>
+            </table>
+          </section>
+          <section>
+            <h3>Try it!</h3>
+            <ul>
+              <li class="fragment">&gt</li>
+              <li class="fragment">&lt</li>
+              <li class="fragment">&gt=</li>
+              <li class="fragment">&lt=</li>
+              <li class="fragment">==</li>
+              <li class="fragment">===</li>
+              <li class="fragment">!==</li>
+            </ul>
+            <div class="evaluator">
+              <input />
+              <code></code>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // width: 1920,
+        // height: 1080,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        pdfSeparateFragments: false,
+      });
+    </script>
+  </body>
+</html>
