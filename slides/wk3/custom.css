@@ -1,0 +1,15 @@
+.evaluator {
+  padding: 20px;
+}
+
+input {
+  margin-left: 0;
+  font-size: 1.5em;
+}
+
+.evaluator code {
+  outline: solid white;
+  padding: 10px;
+  font-size: 1.5em;
+  text-align: left;
+}

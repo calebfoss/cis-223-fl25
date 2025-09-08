@@ -1,0 +1,2 @@
+git config receive.denyCurrentBranch updateInstead
+refresh

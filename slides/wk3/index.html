@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CIS 223 - JavaScript - Week 3</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <script src="evaluator-element.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <img src="img/animation.gif" />
+        </section>
+        <section>
+          <img src="img/animation-frames.png" />
+        </section>
+        <section>
+          <h2>Variables</h2>
+          <ul>
+            <li>
+              Declare -
+              <span class="fragment"
+                >set a location in memory to store data</span
+              >
+            </li>
+            <li>
+              Assign -
+              <span class="fragment">set value stored in variable</span>
+            </li>
+            <li>
+              Initialize -
+              <span class="fragment"
+                >declare a variable and assign a value</span
+              >
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Keywords</h2>
+          <ul>
+            <li class="fragment">let - block scoped variable</li>
+            <li class="fragment">var - function scoped variable (old)</li>
+            <li class="fragment">
+              const - block scoped constant (cannot assign a new value after
+              initialization)
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Relative Assignment Operators</h2>
+          <ul style="font-family: monospace">
+            <li>++&nbsp;&nbsp;increment</li>
+            <li>--&nbsp;&nbsp;decrement</li>
+            <li>+=&nbsp;&nbsp;addition assignment</li>
+            <li>-=&nbsp;&nbsp;subtraction assignment</li>
+            <li>*=&nbsp;&nbsp;multiplication assignment</li>
+            <li>/=&nbsp;&nbsp;division assignment</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Counter</h2>
+          <p id="counter-text">You have clicked the button 0 times</p>
+          <button id="counter-button">Counter</button>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        pdfSeparateFragments: false,
+      });
+    </script>
+    <script>
+      let counterValue = 0;
+      const counterText = document.querySelector('#counter-text');
+      const counterButton = document.querySelector('#counter-button');
+      counterButton.addEventListener('click', function (e) {
+        counterValue++;
+        counterText.innerHTML = `You have clicked the button ${counterValue} times`;
+      });
+    </script>
+  </body>
+</html>

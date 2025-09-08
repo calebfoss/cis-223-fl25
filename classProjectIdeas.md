@@ -1,6 +1,0 @@
-- Form validator - 0
-- Super simple 2D game
-  - flower planting game / simulator
-  - Galactica prototype (one thing)
-- Sound / music generator
-- Interactive animation
