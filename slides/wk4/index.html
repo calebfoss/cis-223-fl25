@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>CIS 223 - JavaScript - Week 5</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    <script src="evaluator-element.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>if</h2>
+          <pre><code class="language-js">
+          if(BOOLEAN) {
+            // this code only runs if boolean is true
+          }
+        </code></pre>
+        </section>
+        <section>
+          <h2>else</h2>
+          <pre><code class="language-js">
+            if(BOOLEAN) {
+              // this code only runs if boolean is true
+            } else {
+              // this code only runs if boolean is false
+            }
+          </code></pre>
+        </section>
+        <section>
+          <h2>else if</h2>
+          <pre><code class="language-js">
+            if(BOOLEAN_A) {
+              // this code only runs if boolean A is true
+            } else if(BOOLEAN_B) {
+              // this code only runs if boolean A is false 
+              // and boolean B is true
+            } else {
+              // this code only runs if both booleans are false
+            }
+          </code></pre>
+        </section>
+        <section>
+          <h2>Logical Operators</h2>
+          <table>
+            <tr>
+              <th>Operator</th>
+              <th>Meaning</th>
+            </tr>
+            <tr>
+              <td>&&</td>
+              <td>And - both conditions are true</td>
+            </tr>
+            <tr>
+              <td>||</td>
+              <td>Or - either condition is true</td>
+            </tr>
+          </table>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+        pdfSeparateFragments: false,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+git config receive.denyCurrentBranch updateInstead
