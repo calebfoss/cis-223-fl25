@@ -14,7 +14,7 @@
 // Michael
 
 // Michelle
-
+let playerAmount = 10;
 // Rock
 
 // Sophia
