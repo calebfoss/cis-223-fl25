@@ -18,6 +18,8 @@
 // Rock
 
 // Sophia
+const waterButton = document.createElement("button");
+
 
 // Victor
 
