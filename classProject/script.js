@@ -9,6 +9,8 @@
 
 // Kevin
 
+let selectedFlowerSeed = "";
+
 // Mely
 
 // Michael
