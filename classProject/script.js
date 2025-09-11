@@ -16,7 +16,7 @@
 // Michelle
 
 // Rock
-
+let flowerVerticalLocation = -1;
 // Sophia
 
 // Victor
