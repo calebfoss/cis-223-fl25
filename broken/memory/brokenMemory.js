@@ -37,7 +37,7 @@ and returns the result.
 function subtractFromVar(numberA) {
     let numberB = 123;
 
-    numberB - numberA;
+    numberB -= numberA;
 
     return numberB;
 }
@@ -67,9 +67,7 @@ Assigns the value of numberA to a constant called numberB
 and returns numberB.
 */
 function setConst(numberA) {
-    const numberB = 0;
-
-    numberB = numberA;
+    const numberB = numberA;
 
     return numberB;
 }
@@ -100,7 +98,7 @@ function concatenate(stringA) {
 
     stringB += stringA;
 
-    return stringA;
+    return stringB;
 }
 
 
@@ -115,7 +113,7 @@ in a constant called less and returns the value of the constant.
 function isLessThan10(num) {
     const less = num < 10;
 
-    return less < num;
+    return less;
 }
 
 /* Sophia
@@ -129,7 +127,7 @@ in a constant called greater and returns the value of the constant.
 function isGreaterThan10(num) {
     const greater = num > 10;
 
-    return isGreaterThan10;
+    return greater;
 }
 
 /* Victor
