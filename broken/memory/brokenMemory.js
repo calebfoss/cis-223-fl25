@@ -23,7 +23,7 @@ called numberB; returns false if not.
 function equalsVariable(numberA) {
     let numberB = 123;
 
-    return numberB = numberA;
+    return numberB === numberA;
 }
 
 /* Eduardo
