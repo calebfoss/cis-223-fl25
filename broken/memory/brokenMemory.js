@@ -7,7 +7,7 @@ Stores the value of str in a constant called storedString and
 returns the resulting value of the constant.
 */
 function storeString(str) {
-    const storedString = "str";
+    const storedString = str;
  
     return storedString;
 }
