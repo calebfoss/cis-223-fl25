@@ -14,6 +14,8 @@ let selectedFlowerSeed = "";
 
 // Mely
 
+const flowerPrice = 10;
+
 // Michael
 
 // Michelle
