@@ -19,7 +19,7 @@ const flowerPrice = 10;
 // Michael
 
 // Michelle
-
+let playerAmount = 10;
 // Rock
 
 // Sophia
