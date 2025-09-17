@@ -4,7 +4,7 @@
 // Becky
 
 // Ben
-const waterCap = 3
+const waterCap = 3;
 // Eduardo
 
 // Kevin
