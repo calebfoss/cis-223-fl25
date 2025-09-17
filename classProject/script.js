@@ -10,6 +10,8 @@ const waterCap = 3;
 
 // Kevin
 
+let selectedFlowerSeed = "";
+
 // Mely
 
 // Michael
