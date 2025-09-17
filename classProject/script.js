@@ -21,7 +21,7 @@ const flowerPrice = 10;
 // Michelle
 let playerAmount = 10;
 // Rock
-
+let flowerVerticalLocation = -1;
 // Sophia
 const waterButton = document.createElement("button");
 
