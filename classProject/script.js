@@ -20,7 +20,7 @@
 // Sophia
 
 // Victor
-let seedPosition = -1;
+let seedPositionX = -1;
 
 // Zander
 
