@@ -25,6 +25,7 @@ const flowerPrice = 10;
 // Sophia
 
 // Victor
+let seedPositionX = -1;
 
 // Zander
 
