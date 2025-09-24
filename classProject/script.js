@@ -1,3 +1,14 @@
+import {
+  createRoot,
+  Color,
+  Vector2D,
+  Angle,
+  ConicalGradient,
+  LinearGradient,
+  RadialGradient,
+  Shadow,
+  Random
+} from "web-spinner";
 /////////////////////////////
 // MEMORY INITIALIZATION
 
@@ -25,19 +36,9 @@ let flowerVerticalLocation = -1;
 // Sophia
 const waterButton = document.createElement("button");
 
-
 // Victor
 let seedPositionX = -1;
 
 // Zander
 
-
 /////////////////////////////
-
-
-
-
-
-
-
-
