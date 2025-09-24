@@ -15,30 +15,47 @@ import {
 // Becky
 //Initialize a variable to store the number of times the current flower has been watered using an initial value of 0.
 let timesWatered = 0;
-// Ben
-const waterCap = 3;
-// Eduardo
 
-// Kevin
+const waterCap = 3;
 
 let selectedFlowerSeed = "";
 
-// Mely
-
 const flowerPrice = 10;
 
-// Michael
-
-// Michelle
 let playerAmount = 10;
-// Rock
+
 let flowerVerticalLocation = -1;
-// Sophia
+
 const waterButton = document.createElement("button");
 
-// Victor
 let seedPositionX = -1;
 
-// Zander
+const groundLevel = 400;
+/////////////////////////////
 
 /////////////////////////////
+// SETUP
+
+const root = createRoot();
+
+const canvas = root.canvas2D({
+  width: 500,
+  height: 500,
+  background: 'lightblue'
+});
+
+const ground = canvas.rectangle({
+  fill: 'green',
+  anchor: Vector2D.xy(0, groundLevel),
+  width: canvas.width,
+  height: canvas.height - 400
+});
+
+root.appendChild(waterButton);
+
+waterButton.append('Water');
+/////////////////////////////
+
+/////////////////////////////
+// GAME
+
