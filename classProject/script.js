@@ -59,3 +59,22 @@ waterButton.append('Water');
 /////////////////////////////
 // GAME
 
+// Michelle
+
+// Benjamin
+
+// Becky
+
+// Rock
+
+// Kevin
+
+// Mely
+
+// Eduardo
+
+// Victor
+
+// Sophia
+
+// Zander
