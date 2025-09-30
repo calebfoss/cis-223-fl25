@@ -152,8 +152,16 @@ function updateMoney() {
 // Victor
 
 function seedPrice(color) {
-  // Temporary for testing
-  return 0;
+
+    if (color.toLowerCase() === "blue") {
+      return 2;
+    } else if (color.toLowerCase() === "orange") {
+      return 4;
+    } else if (color.toLowerCase() === "pink") {
+      return 8
+    } else if(color.toLowerCase() === "purple") {
+      return 20;
+    }
 }
 
 // Sophia
