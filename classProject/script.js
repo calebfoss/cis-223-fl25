@@ -111,7 +111,12 @@ buySeedButton.addEventListener('click',purchaseSeed);
 
 function waterFlower() {
   // Remove this when implemented
-  alert("Water");
+  timesWatered += 1;
+  if (timesWatered >= waterCap) {
+    bloom();
+    timesWatered = 0;
+  }
+  alert(timesWatered);
 }
 
 waterButton.addEventListener('click', waterFlower);
