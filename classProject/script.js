@@ -133,6 +133,16 @@ function flowerPassiveIncome() {
 // Kevin
 
 function removeFlower() {
+    
+    const confirmRemoval = confirm("Do you want to remove this flower?");
+    
+    if (confirmRemoval) {
+        flower.remove();
+        playerAmount += flowerPrice;
+    }
+}
+
+// Mely
 
 }
 
