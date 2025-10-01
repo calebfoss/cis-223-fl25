@@ -116,14 +116,13 @@ const moneyDisplay = canvas.text({
 
 // Michelle
 
-function purchaseSeed() 
-{
-    seed.anchor.x = Math.random() * canvas.width;   // Set the seed's anchor to a random X position.
-    
-    seed.anchor.y = -seed.height;   // Set Y position just above the canvas.
+function purchaseSeed() {
+  seed.anchor.x = Math.random() * canvas.width; // Set the seed's anchor to a random X position.
 
-    seed.velocity = Vector2D.xy(0, 2);
-     // Set the seed's velocity to move straight down,
+  seed.anchor.y = -seed.height; // Set Y position just above the canvas.
+
+  seed.velocity = Vector2D.xy(0, 2);
+  // Set the seed's velocity to move straight down,
 }
 
 // When this button is pressed
