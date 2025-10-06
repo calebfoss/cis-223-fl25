@@ -109,8 +109,16 @@ buySeedButton.addEventListener('click',purchaseSeed);
 
 // Benjamin
 
+const stem = canvas.rectangle({
+  width: 10,
+  height: 20,
+  fill: 'green',
+  stroke: 'none',
+  anchor: Vector2D.xy(105, 100)
+});
+
 function waterFlower() {
-  // Remove this when implemented
+  
   timesWatered += 1;
   if (timesWatered >= waterCap) {
     bloom();
