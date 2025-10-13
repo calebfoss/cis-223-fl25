@@ -9,10 +9,12 @@ import {
 /////////////////////////////
 // MEMORY INITIALIZATION
 
-//Initialize a variable to store the number of times the current flower has been watered using an initial value of 0.
 let timesWatered = 0;
 
 const waterCap = 3;
+
+
+
 
 let selectedFlowerSeed = "";
 
@@ -148,9 +150,12 @@ waterButton.addEventListener('click', waterFlower);
 // Becky
 
 function bloom() {
+  if (timesWatered === waterCap) {
+    flower.anchor.y = 20;
 
-  // Make money from flower blooming
-  flowerPassiveIncome();
+    // Make money from flower blooming
+    flowerPassiveIncome();
+  }
 }
 
 // Rock
