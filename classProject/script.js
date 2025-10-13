@@ -172,10 +172,26 @@ function removeFlower() {
 
 // Mely
 
-function flowerPrice(color) {
-  // Temporary for testing
-  return 0;
+let flowerPrice = 0;
+
+function setFlowerPrice(flowerColor) {
+    if (flowerColor === 'blue') {
+        flowerPrice = 9
+    } else if (flowerColor === 'orange') {
+        flowerPrice = 7
+    } else if (flowerColor === 'pink') {
+        flowerPrice = 8
+    } else if (flowerColor === 'purple') {
+        flowerPrice = 10
+    } else {
+        flowerPrice = 5;
+    }
+    return flowerPrice;
 }
+
+setFlowerPrice();
+
+
 
 // Eduardo
 
