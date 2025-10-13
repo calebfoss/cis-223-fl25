@@ -13,12 +13,6 @@ let timesWatered = 0;
 
 const waterCap = 3;
 
-function myCheck(){  
-  if (timesWatered === waterCap) {
-    anchor.y.flower = 20;
-  }
-}
-
 
 
 
@@ -156,9 +150,12 @@ waterButton.addEventListener('click', waterFlower);
 // Becky
 
 function bloom() {
+  if (timesWatered === waterCap) {
+    flower.anchor.y = 20;
 
-  // Make money from flower blooming
-  flowerPassiveIncome();
+    // Make money from flower blooming
+    flowerPassiveIncome();
+  }
 }
 
 // Rock
