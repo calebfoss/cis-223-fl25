@@ -144,10 +144,6 @@ function removeFlower() {
 
 // Mely
 
-}
-
-// Mely
-
 function flowerPrice(color) {
   // Temporary for testing
   return 0;
