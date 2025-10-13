@@ -9,10 +9,12 @@ import {
 /////////////////////////////
 // MEMORY INITIALIZATION
 
-//Initialize a variable to store the number of times the current flower has been watered using an initial value of 0.
 let timesWatered = 0;
 
 const waterCap = 3;
+
+
+
 
 let selectedFlowerSeed = "";
 
@@ -22,6 +24,35 @@ let flowerVerticalLocation = -1;
 
 const waterButton = document.createElement("button");
 
+function buySeed() {
+  const validColors = ["blue", "orange", "pink", "purple"];
+  let selectedColor = "";
+
+  while (true) {
+    let input = prompt(
+      "What color of flower would you like to buy? (blue, orange, pink, purple)"
+    );
+    if (input === null) {
+      alert("Purchase cancelled.");
+      return; // User cancelled prompt
+    }
+
+    input = input.trim().toLowerCase();
+
+    if (validColors.includes(input)) {
+      selectedColor = input;
+      alert(`You bought a ${selectedColor} flower seed.`);
+      break;
+    } else {
+      alert(`Sorry, we're out of ${input} flower seeds.`);
+    }
+  }
+
+  // `selectedColor` used for further logic here
+  return selectedColor;
+}
+
+// Victor
 let seedPositionX = -1;
 
 const groundLevel = 200;
@@ -119,9 +150,12 @@ waterButton.addEventListener('click', waterFlower);
 // Becky
 
 function bloom() {
+  if (timesWatered === waterCap) {
+    flower.anchor.y = 20;
 
-  // Make money from flower blooming
-  flowerPassiveIncome();
+    // Make money from flower blooming
+    flowerPassiveIncome();
+  }
 }
 
 // Rock
@@ -144,10 +178,26 @@ function removeFlower() {
 
 // Mely
 
-function flowerPrice(color) {
-  // Temporary for testing
-  return 0;
+let flowerPrice = 0;
+
+function setFlowerPrice(flowerColor) {
+    if (flowerColor === 'blue') {
+        flowerPrice = 9
+    } else if (flowerColor === 'orange') {
+        flowerPrice = 7
+    } else if (flowerColor === 'pink') {
+        flowerPrice = 8
+    } else if (flowerColor === 'purple') {
+        flowerPrice = 10
+    } else {
+        flowerPrice = 5;
+    }
+    return flowerPrice;
 }
+
+setFlowerPrice();
+
+
 
 // Eduardo
 
