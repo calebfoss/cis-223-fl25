@@ -185,10 +185,6 @@ function removeFlower() {
 
 // Mely
 
-}
-
-// Mely
-
 let flowerPrice = 0;
 
 function setFlowerPrice(flowerColor) {
