@@ -27,7 +27,7 @@ declare const Canvas2DRectangle_base: {
         "__#18@#height": number;
         width: number;
         height: number;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -609,6 +609,7 @@ declare const Canvas2DRectangle_base: {
         "__#22@#angleChangeListener": ChangeListener<number>;
         angle: import("../..").Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         angularVelocity: import("../..").Angle;
         anchor: import("../..").Vector2D;
         "__#22@#anchorChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
@@ -616,9 +617,11 @@ declare const Canvas2DRectangle_base: {
         moveAnchor(x: number, y: number): void;
         rotateClockwise(angle: import("../..").Angle): void;
         rotateCounterclockwise(angle: import("../..").Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         get scale(): import("../..").Vector2D;
         set scale(value: import("../..").Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         velocity: import("../..").Vector2D;
     };
     observedAttributes: string[];
@@ -632,7 +635,7 @@ declare const Canvas2DRectangle_base: {
         lineWidth: number | null;
         stroke: import("../../classes/gradient").DrawStyle | null;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1214,7 +1217,7 @@ declare const Canvas2DRectangle_base: {
         "__#30@#fill": import("../../classes/gradient").DrawStyle | null;
         fill: import("../../classes/gradient").DrawStyle | null;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1818,7 +1821,7 @@ declare const Canvas2DShapeRectangle_base: {
         "__#18@#height": number;
         width: number;
         height: number;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -2400,6 +2403,7 @@ declare const Canvas2DShapeRectangle_base: {
         "__#22@#angleChangeListener": ChangeListener<number>;
         angle: import("../..").Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         angularVelocity: import("../..").Angle;
         anchor: import("../..").Vector2D;
         "__#22@#anchorChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
@@ -2407,9 +2411,11 @@ declare const Canvas2DShapeRectangle_base: {
         moveAnchor(x: number, y: number): void;
         rotateClockwise(angle: import("../..").Angle): void;
         rotateCounterclockwise(angle: import("../..").Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         get scale(): import("../..").Vector2D;
         set scale(value: import("../..").Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         velocity: import("../..").Vector2D;
     };
     observedAttributes: string[];
@@ -3092,7 +3098,7 @@ declare const SVGRectangleController_base: {
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGScriptElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
         "__#26@#group": SVGGElement | null;
         "__#26@#attachMain"(): void;
         "__#26@#createGroup"(): SVGGElement;
@@ -3775,7 +3781,7 @@ declare const SVGRectangleController_base: {
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGScriptElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
         "__#26@#group": SVGGElement | null;
         "__#26@#attachMain"(): void;
         "__#26@#createGroup"(): SVGGElement;
@@ -3792,7 +3798,7 @@ declare const SVGRectangleController_base: {
         connectedCallback(): void;
         height: number;
         width: number;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGScriptElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
         "__#26@#group": SVGGElement | null;
         addEventListener: ((type: keyof SVGElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void) & {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -4832,6 +4838,7 @@ declare const SVGRectangleController_base: {
         "__#22@#velocity": import("../..").Vector2D;
         "__#22@#angleChangeListener": ChangeListener<number>;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         angularVelocity: import("../..").Angle;
         "__#22@#anchorChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         _applyMovement(deltaTime: number): void;
@@ -4839,9 +4846,11 @@ declare const SVGRectangleController_base: {
         moveAnchor(x: number, y: number): void;
         rotateClockwise(angle: import("../..").Angle): void;
         rotateCounterclockwise(angle: import("../..").Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         get scale(): import("../..").Vector2D;
         set scale(value: import("../..").Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         velocity: import("../..").Vector2D;
         createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
@@ -5183,7 +5192,7 @@ declare const SVGRectangleController_base: {
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGScriptElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
         "__#26@#group": SVGGElement | null;
         "__#26@#attachMain"(): void;
         "__#26@#createGroup"(): SVGGElement;
@@ -5534,7 +5543,7 @@ declare const SVGRectangleController_base: {
         connectedCallback: (() => void) & (() => void) & (() => void);
         moveOffset: ((x: number, y: number) => void) & ((x: number, y: number) => void);
         offset: import("../..").Vector2D;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGScriptElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
         "__#26@#group": SVGGElement | null;
         addEventListener: ((type: keyof SVGElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void) & {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -6237,7 +6246,7 @@ declare const SVGRectangleController_base: {
     new (...args: any[]): {
         createSVGControllerChild<E extends import("./svgBase").SVGElementController>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         rectangle(options?: Partial<SVGRectangleController>): SVGRectangleController;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGScriptElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
         "__#26@#group": SVGGElement | null;
         addEventListener(type: keyof SVGElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
         removeEventListener(type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;

@@ -17,6 +17,7 @@ export declare function hasTo<B extends typeof Canvas2DBaseRenderable>(Base: B):
         "__#29@#mouseListeners": Set<EventListenerOrEventListenerObject>;
         "__#29@#shadow": import("..").Shadow | null;
         addEventListener(type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        createChild<E extends typeof import("../elements/mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         renderConicalGradient(context: CanvasRenderingContext2D, gradient: import("..").ConicalGradient): CanvasGradient;
         renderLinearGradient(context: CanvasRenderingContext2D, gradient: import("..").LinearGradient): CanvasGradient;
         renderRadialGradient(context: CanvasRenderingContext2D, gradient: import("..").RadialGradient): CanvasGradient;
@@ -248,7 +249,6 @@ export declare function hasTo<B extends typeof Canvas2DBaseRenderable>(Base: B):
             readonly wheel: (listener: TypedEventListener<"wheel">) => void;
         };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
-        createChild<E extends typeof import("../elements/mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         accessKey: string;
         readonly accessKeyLabel: string;
         autocapitalize: string;
@@ -600,6 +600,7 @@ export declare function hasFrom<B extends typeof Canvas2DBaseRenderable>(Base: B
         "__#29@#mouseListeners": Set<EventListenerOrEventListenerObject>;
         "__#29@#shadow": import("..").Shadow | null;
         addEventListener(type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        createChild<E extends typeof import("../elements/mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         renderConicalGradient(context: CanvasRenderingContext2D, gradient: import("..").ConicalGradient): CanvasGradient;
         renderLinearGradient(context: CanvasRenderingContext2D, gradient: import("..").LinearGradient): CanvasGradient;
         renderRadialGradient(context: CanvasRenderingContext2D, gradient: import("..").RadialGradient): CanvasGradient;
@@ -831,7 +832,6 @@ export declare function hasFrom<B extends typeof Canvas2DBaseRenderable>(Base: B
             readonly wheel: (listener: TypedEventListener<"wheel">) => void;
         };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
-        createChild<E extends typeof import("../elements/mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         accessKey: string;
         readonly accessKeyLabel: string;
         autocapitalize: string;

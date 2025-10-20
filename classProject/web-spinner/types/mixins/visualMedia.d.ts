@@ -31,7 +31,7 @@ export declare function rendersVisualMedia<B extends C2DTransformed, T extends "
         origin: "center" | "topLeft";
         "__#18@#width": number;
         "__#18@#height": number;
-        createChild<E extends typeof import("../elements/mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../elements/mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../elements/mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -614,6 +614,7 @@ export declare function rendersVisualMedia<B extends C2DTransformed, T extends "
         "__#22@#angleChangeListener": ChangeListener<number>;
         angle: import("..").Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         angularVelocity: import("..").Angle;
         anchor: import("..").Vector2D;
         "__#22@#anchorChangeListener": ChangeListener<import("../classes/vector2d").Vector2DBase>;
@@ -621,9 +622,11 @@ export declare function rendersVisualMedia<B extends C2DTransformed, T extends "
         moveAnchor(x: number, y: number): void;
         rotateClockwise(angle: import("..").Angle): void;
         rotateCounterclockwise(angle: import("..").Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<import("../classes/vector2d").Vector2DBase>;
         get scale(): import("..").Vector2D;
         set scale(value: import("..").Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<import("../classes/vector2d").Vector2DBase>;
         velocity: import("..").Vector2D;
     };
     observedAttributes: string[];

@@ -20,6 +20,7 @@ export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: 
          */
         angle: Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -46,6 +47,7 @@ export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: 
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -57,6 +59,7 @@ export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: 
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -422,6 +425,7 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
          */
         angle: Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -448,6 +452,7 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -459,6 +464,7 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -466,7 +472,7 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
          * @reflect
          */
         velocity: Vector2D;
-        createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1061,6 +1067,7 @@ declare const C2DStandaloneTransformed_base: {
          */
         angle: Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -1087,6 +1094,7 @@ declare const C2DStandaloneTransformed_base: {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -1098,6 +1106,7 @@ declare const C2DStandaloneTransformed_base: {
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -1105,7 +1114,7 @@ declare const C2DStandaloneTransformed_base: {
          * @reflect
          */
         velocity: Vector2D;
-        createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1696,6 +1705,7 @@ declare const C2DStandaloneTransformed_base: {
          */
         angle: Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -1722,6 +1732,7 @@ declare const C2DStandaloneTransformed_base: {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -1733,6 +1744,7 @@ declare const C2DStandaloneTransformed_base: {
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -2100,6 +2112,7 @@ declare const C2DShapePartTransformed_base: {
          */
         angle: Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -2126,6 +2139,7 @@ declare const C2DShapePartTransformed_base: {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -2137,6 +2151,7 @@ declare const C2DShapePartTransformed_base: {
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -2144,7 +2159,7 @@ declare const C2DShapePartTransformed_base: {
          * @reflect
          */
         velocity: Vector2D;
-        createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -2735,6 +2750,7 @@ declare const C2DShapePartTransformed_base: {
          */
         angle: Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -2761,6 +2777,7 @@ declare const C2DShapePartTransformed_base: {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -2772,6 +2789,7 @@ declare const C2DShapePartTransformed_base: {
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -3135,6 +3153,7 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
         "__#22@#velocity": Vector2D;
         "__#22@#angleChangeListener": ChangeListener<number>;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -3154,6 +3173,7 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -3165,6 +3185,7 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -3512,7 +3533,7 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGScriptElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
         "__#26@#group": SVGGElement | null;
         "__#26@#attachMain"(): void;
         "__#26@#createGroup"(): SVGGElement;

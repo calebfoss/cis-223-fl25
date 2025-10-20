@@ -7,7 +7,6 @@ export declare class Color {
     static fromString(value: string): Color;
     equals(other: Color): boolean;
     toString(): string;
-    static get random(): Color;
     static rgb(red: number, green: number, blue: number, alpha?: number): Color;
     static hsl(hue: number, saturation: number, lightness: number, alpha?: number): Color;
 }

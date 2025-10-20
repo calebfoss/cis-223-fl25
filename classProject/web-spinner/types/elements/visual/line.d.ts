@@ -13,6 +13,7 @@ declare const Canvas2DShapeLine_base: {
         "__#29@#mouseListeners": Set<EventListenerOrEventListenerObject>;
         "__#29@#shadow": import("../..").Shadow | null;
         addEventListener(type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         renderConicalGradient(context: CanvasRenderingContext2D, gradient: ConicalGradient): CanvasGradient;
         renderLinearGradient(context: CanvasRenderingContext2D, gradient: LinearGradient): CanvasGradient;
         renderRadialGradient(context: CanvasRenderingContext2D, gradient: RadialGradient): CanvasGradient;
@@ -244,7 +245,6 @@ declare const Canvas2DShapeLine_base: {
             readonly wheel: (listener: TypedEventListener<"wheel">) => void;
         };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         accessKey: string;
         readonly accessKeyLabel: string;
         autocapitalize: string;
@@ -592,7 +592,7 @@ declare const Canvas2DLine_base: {
         lineWidth: number | null;
         stroke: import("../../classes/gradient").DrawStyle | null;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1178,6 +1178,7 @@ declare const Canvas2DLine_base: {
         "__#29@#mouseListeners": Set<EventListenerOrEventListenerObject>;
         "__#29@#shadow": import("../..").Shadow | null;
         addEventListener(type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         renderConicalGradient(context: CanvasRenderingContext2D, gradient: ConicalGradient): CanvasGradient;
         renderLinearGradient(context: CanvasRenderingContext2D, gradient: LinearGradient): CanvasGradient;
         renderRadialGradient(context: CanvasRenderingContext2D, gradient: RadialGradient): CanvasGradient;
@@ -1409,7 +1410,6 @@ declare const Canvas2DLine_base: {
             readonly wheel: (listener: TypedEventListener<"wheel">) => void;
         };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         accessKey: string;
         readonly accessKeyLabel: string;
         autocapitalize: string;
@@ -1754,6 +1754,7 @@ declare const Canvas2DLine_base: {
         "__#29@#mouseListeners": Set<EventListenerOrEventListenerObject>;
         "__#29@#shadow": import("../..").Shadow | null;
         addEventListener(type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         renderConicalGradient(context: CanvasRenderingContext2D, gradient: ConicalGradient): CanvasGradient;
         renderLinearGradient(context: CanvasRenderingContext2D, gradient: LinearGradient): CanvasGradient;
         renderRadialGradient(context: CanvasRenderingContext2D, gradient: RadialGradient): CanvasGradient;
@@ -1985,7 +1986,6 @@ declare const Canvas2DLine_base: {
             readonly wheel: (listener: TypedEventListener<"wheel">) => void;
         };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         accessKey: string;
         readonly accessKeyLabel: string;
         autocapitalize: string;

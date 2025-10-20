@@ -18,6 +18,7 @@ import { Shadow } from "./classes/shadow";
 import { createRoot } from "./elements/document/domBase";
 import { BorderRadius } from "./classes/borderRadius";
 import { Random } from "./classes/random";
+import { CustomHTMLElement } from "./elements/mixable";
 export type CSSLengthUnit = (typeof Units.size)[keyof typeof Units.size];
 declare function createMultiple<R extends Node>(count: number, generator: (index: number) => R): R[];
 declare global {
@@ -40,4 +41,11 @@ export type WebSpinnerElement = {
     Canvas2DText: Canvas2DText;
     Canvas2DVideo: Canvas2DVideo;
 };
-export { createMultiple, BorderRadius, Color, Vector2D, Angle, State, ConicalGradient, LinearGradient, RadialGradient, Random, Shadow, createState, createRoot, };
+type ElementMap = {
+    parentElement: typeof CustomHTMLElement;
+    [name: string]: typeof CustomHTMLElement | ElementMap;
+};
+declare const elements: {
+    [category: string]: ElementMap;
+};
+export { createMultiple, BorderRadius, Color, Vector2D, Angle, State, ConicalGradient, LinearGradient, RadialGradient, Random, Shadow, createState, createRoot, elements as Elements, };

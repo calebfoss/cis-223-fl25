@@ -13,7 +13,7 @@ export declare class Vector2D extends State<Vector2DBase> {
     equals(x: number, y: number): boolean;
     equals(other: Vector2D): boolean;
     get inverse(): Vector2D;
-    static get one(): Vector2D;
+    static one(): Vector2D;
     minus(x: number, y: number): Vector2D;
     minus(other: Vector2D): Vector2D;
     plus(x: number, y: number): Vector2D;
@@ -24,5 +24,5 @@ export declare class Vector2D extends State<Vector2DBase> {
     set x(value: number);
     get y(): number;
     set y(value: number);
-    static get zero(): Vector2D;
+    static zero(): Vector2D;
 }

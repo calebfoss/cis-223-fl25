@@ -4,6 +4,7 @@ import { KeyboardTracker } from "../../classes/keyboard";
 import { MouseTracker } from "../../classes/mouse";
 import { C2DBase } from "./c2dBase";
 import { DrawStyle } from "../../classes/gradient";
+import { CustomHTMLElement } from "../mixable";
 declare const Canvas2DCanvasElement_base: {
     new (...args: any[]): {
         bezier(options?: Options<import("./bezier").Canvas2DBezier>): import("./bezier").Canvas2DBezier;
@@ -235,7 +236,7 @@ declare const Canvas2DCanvasElement_base: {
         };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
         attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -611,6 +612,7 @@ export declare class Canvas2DCanvasElement extends Canvas2DCanvasElement_base {
      */
     get center(): Vector2D;
     connectedCallback(): void;
+    createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
     get keyDown(): boolean;
     get domCanvas(): HTMLCanvasElement;
     get clicked(): boolean;
