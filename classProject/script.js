@@ -149,7 +149,7 @@ function bloom() {
 
 // Rock
 function onFlowerBloom(playerAmount, flowerPrice) {
-  return playerAmount + flowerPrice;
+  playerAmount += flowerPrice;
 }
 
 // Sophia
