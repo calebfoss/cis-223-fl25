@@ -4,6 +4,7 @@ import { Vector2D } from "../../classes/vector2d";
 import { Canvas2DCanvasElement } from "./canvas";
 import { C2DBase } from "./c2dBase";
 import { Canvas2DShape } from "./shape";
+import { CustomHTMLElement } from "../mixable";
 export declare const changedEvent: Event;
 export declare class Canvas2DBaseRenderable extends C2DBase {
     #private;
@@ -12,6 +13,7 @@ export declare class Canvas2DBaseRenderable extends C2DBase {
      * @private
      */
     addEventListener(type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+    createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
     /**
      * @private
      */
@@ -285,7 +287,7 @@ declare const Canvas2DStandaloneRenderable_base: {
         };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
         attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -853,7 +855,7 @@ declare const Canvas2DShapePartRenderable_base: {
         };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
         attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;

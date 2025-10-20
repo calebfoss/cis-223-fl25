@@ -7,7 +7,7 @@ declare const Canvas2DShape_base: {
         "__#30@#fill": import("../../classes/gradient").DrawStyle | null;
         fill: import("../../classes/gradient").DrawStyle | null;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -591,7 +591,7 @@ declare const Canvas2DShape_base: {
         lineWidth: number | null;
         stroke: import("../../classes/gradient").DrawStyle | null;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;

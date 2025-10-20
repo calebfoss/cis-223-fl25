@@ -24,7 +24,7 @@ declare const Canvas2DEllipse_base: {
         "__#18@#height": number;
         width: number;
         height: number;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -606,6 +606,7 @@ declare const Canvas2DEllipse_base: {
         "__#22@#angleChangeListener": ChangeListener<number>;
         angle: Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         angularVelocity: Angle;
         anchor: import("../..").Vector2D;
         "__#22@#anchorChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
@@ -613,9 +614,11 @@ declare const Canvas2DEllipse_base: {
         moveAnchor(x: number, y: number): void;
         rotateClockwise(angle: Angle): void;
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         get scale(): import("../..").Vector2D;
         set scale(value: import("../..").Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         velocity: import("../..").Vector2D;
     };
     observedAttributes: string[];
@@ -629,7 +632,7 @@ declare const Canvas2DEllipse_base: {
         lineWidth: number | null;
         stroke: import("../../classes/gradient").DrawStyle | null;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1211,7 +1214,7 @@ declare const Canvas2DEllipse_base: {
         "__#30@#fill": import("../../classes/gradient").DrawStyle | null;
         fill: import("../../classes/gradient").DrawStyle | null;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1812,7 +1815,7 @@ declare const Canvas2DShapeEllipse_base: {
         "__#18@#height": number;
         width: number;
         height: number;
-        createChild<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        createChild: (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof import("../mixable").CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -2394,6 +2397,7 @@ declare const Canvas2DShapeEllipse_base: {
         "__#22@#angleChangeListener": ChangeListener<number>;
         angle: Angle;
         "__#22@#angularVelocityChangedTime": number;
+        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
         angularVelocity: Angle;
         anchor: import("../..").Vector2D;
         "__#22@#anchorChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
@@ -2401,9 +2405,11 @@ declare const Canvas2DShapeEllipse_base: {
         moveAnchor(x: number, y: number): void;
         rotateClockwise(angle: Angle): void;
         rotateCounterclockwise(angle: Angle): void;
+        "__#22@#scaleChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         get scale(): import("../..").Vector2D;
         set scale(value: import("../..").Vector2D | number);
         "__#22@#velocityChangedTime": number;
+        "__#22@#velocityChangeListener": ChangeListener<import("../../classes/vector2d").Vector2DBase>;
         velocity: import("../..").Vector2D;
     };
     observedAttributes: string[];
