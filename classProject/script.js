@@ -148,6 +148,11 @@ function bloom() {
 }
 
 // Rock
+function onFlowerBloom(playerAmount, flowerPrice) {
+  return playerAmount + flowerPrice;
+}
+
+// Sophia
 
 function flowerPassiveIncome() {}
 
