@@ -32,7 +32,7 @@ function countEvens(end) {
     num += 2;
 }
 
-/* Eduardo
+/* Michelle
 
 Parameters:
 gap - number
@@ -103,7 +103,7 @@ function countDown(start) {
   }
 }
 
-/* Sofia
+/* Sophia
 
 Parameters:
 end - number
