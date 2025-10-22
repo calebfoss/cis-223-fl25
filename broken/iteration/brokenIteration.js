@@ -32,6 +32,23 @@ function countEvens(end) {
     num += 2;
 }
 
+/* Eduardo
+
+Parameters:
+end - number
+
+Starting with the number 1, triples the number until it reaches the end argument.
+Logs each number to the console.
+*/
+function tripleUntil(end) {
+  let num = 1;
+
+  while(num < end) {
+    console.log(num * 3);
+  }
+}
+
+
 /* Michelle
 
 Parameters:
