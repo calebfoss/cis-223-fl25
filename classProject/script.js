@@ -1,27 +1,11 @@
 import { createRoot, Color, Vector2D, Angle, Random } from "web-spinner";
 
-// Variation on flower height
-//  chance-based
-
 /////////////////////////////
-// MEMORY INITIALIZATION
-
-let timesWatered = 0;
-
-const waterCap = 5;
-
-let selectedFlowerSeed = "";
-
+// GLOBAL MEMORY INITIALIZATION
 let playerAmount = 10;
 
-let flowerVerticalLocation = -1;
-
-const waterButton = document.createElement("button");
-
-
-
-// Victor
-let seedPositionX = -1;
+// Empty array to store flowers
+const flowers = [];
 
 const groundLevel = 200;
 /////////////////////////////
@@ -39,21 +23,103 @@ const canvas = root.canvas2D({
   background: "lightblue",
 });
 
+class Flower {
+  constructor(color) {
+    this.color = color;
+
+    this.x = Math.random() * canvas.width;
+
+    this.seed = canvas.ellipse({
+      width: 10,
+      height: 20,
+      fill: "tan",
+      stroke: "none",
+      anchor: Vector2D.xy(this.x, -20),
+      velocity: Vector2D.xy(0, 200)
+    });
+
+    // Put the seed before the ground to make it
+    //  appear behind the ground
+    canvas.insertBefore(this.seed, ground);
+    
+    this.stems = [];
+
+    this.sprite = null;
+
+    this.timesWatered = 0;
+
+    this.waterCap = 5;
+  }
+
+  bloom() {
+    // Create flower image
+    const sprite = canvas.image({
+      source: "images/FLower 5/Flower 5 - " + this.color.toUpperCase() + ".png",
+      scale: 4,
+    });
+
+    sprite.anchor = Vector2D.xy(this.x - sprite.width / 2, groundLevel - 100);
+
+    // Remove all of the stems
+    while(this.stems.length > 0) {
+      // Get last stem in list
+      const lastStem = this.stems.pop();
+      // Remove it
+      lastStem.remove();
+    }
+
+    sprite.addEventListener("click", this.pick.bind(this));
+
+    this.sprite = sprite;
+  }
+
+  pick() {
+    const confirmRemoval = confirm("Do you want to remove this flower?");
+    
+    if (confirmRemoval) {
+        this.sprite.remove();
+
+        const flowerPrice = setFlowerPrice(this.color);
+
+        modifyMoney(flowerPrice);
+
+        // Find the index number of this flower in the array
+        const index = flowers.indexOf(this);
+
+        // Splice this flower out of the array
+        flowers.splice(index, 1);
+    }
+  }
+
+  water() {
+    this.timesWatered++;
+
+    if(this.timesWatered === this.waterCap) this.bloom();
+
+    // If the flower has already bloomed, do nothing
+    if(this.timesWatered >= this.waterCap) return;
+
+    const stemHeight = 20;
+
+    const stem = canvas.rectangle({
+      width: 10,
+      height: stemHeight,
+      fill: 'green',
+      stroke: 'none',
+      anchor: Vector2D.xy(this.x, groundLevel - stemHeight * this.timesWatered)
+    });
+
+    // Put the new stem in the list of stems
+    this.stems.push(stem);
+  }
+}
+
+const waterButton = document.createElement("button");
+
 // Put water button in root container
 root.appendChild(waterButton);
 // Add text to button
 waterButton.append("Water");
-
-// Create seed shape
-const seed = canvas.ellipse({
-  width: 10,
-  height: 20,
-  fill: "tan",
-  stroke: "none",
-  anchor: Vector2D.xy(0, -20),
-});
-
-
 
 // Create rectangle for ground
 const ground = canvas.rectangle({
@@ -63,8 +129,6 @@ const ground = canvas.rectangle({
   width: canvas.width,
   height: canvas.height - groundLevel,
 });
-
-const stems = [];
 
 // Turn off image smoothing for pixel art
 // (otherwise it will look blurry)
@@ -119,121 +183,35 @@ function buySeed() {
     }
   }
 
-        // `selectedColor` used for further logic here
-        selectedFlowerSeed = selectedColor;
+  const price = seedPrice(selectedColor);
 
-    const price = seedPrice(selectedFlowerSeed);
+  if(playerAmount < price) {
+    alert("Sorry, not enough cash!");
 
-      if(playerAmount < price) {
-        alert("Sorry, not enough cash!");
+    return;
+  }
 
-        return;
-      }
+  alert(`You bought a ${selectedColor} flower seed.`);
 
-      alert(`You bought a ${selectedColor} flower seed.`);
+  modifyMoney(-price);
 
+  const flower = new Flower(selectedColor);
 
-
-      
-
-      modifyMoney(-price);
-
-      purchaseSeed();
-}
-
-// Michelle
-
-function purchaseSeed() {
-  seedPositionX = Math.random() * canvas.width; // Set the seed's anchor to a random X position.
-  seed.anchor.x = seedPositionX; 
-  seed.anchor.y = -seed.height; // Set Y position just above the canvas.
-
-  seed.velocity = Vector2D.xy(0, 200);
-  // Set the seed's velocity to move straight down,
+  flowers.push(flower);
 }
 
 // When this button is pressed
 // call the purchaseSeed function
 buySeedButton.addEventListener("click", buySeed);
 
-// Benjamin
-
-
-
-function grow() {
-  const stemHeight = 20;
-
-  const stem = canvas.rectangle({
-    width: 10,
-    height: stemHeight,
-    fill: 'green',
-    stroke: 'none',
-    anchor: Vector2D.xy(seedPositionX, groundLevel - stemHeight * timesWatered)
-  });
-
-  // Put the new stem in the list of stems
-  stems.push(stem);
-}
-
-function waterFlower() {
-  
-  timesWatered += 1;
-
-  if (timesWatered >= waterCap) {
-    bloom();
-    timesWatered = 0;
-  } else {
-    grow();
+function waterFlowers() {
+  // Water each of the current flowers
+  for(const flower of flowers) {
+    flower.water();
   }
 }
 
-waterButton.addEventListener("click", waterFlower);
-
-// Becky
-
-function bloom() {
-  if (timesWatered === waterCap) {
-    // Create flower image
-    const flower = canvas.image({
-      source: "images/FLower 5/Flower 5 - " + selectedFlowerSeed.toUpperCase() + ".png",
-      scale: 4,
-    });
-
-    flower.anchor = Vector2D.xy(seedPositionX - flower.width / 2, groundLevel - 100);
-
-    // Remove all of the stems
-    while(stems.length > 0) {
-      // Get last stem in list
-      const lastStem = stems.pop();
-      // Remove it
-      lastStem.remove();
-    }
-
-    function removeThisFlower() {
-      removeFlower(flower);
-    }
-
-    flower.addEventListener("click", removeThisFlower);
-  }
-}
-
-// Kevin
-
-function removeFlower(flower) {
-    
-    const confirmRemoval = confirm("Do you want to remove this flower?");
-    
-    if (confirmRemoval) {
-        flower.remove();
-
-        const flowerPrice = setFlowerPrice(selectedFlowerSeed);
-
-        modifyMoney(flowerPrice);
-    }
-}
-
-// Mely
-
+waterButton.addEventListener("click", waterFlowers);
 
 function setFlowerPrice(flowerColor) {
   let flowerPrice = 0;
@@ -252,12 +230,6 @@ function setFlowerPrice(flowerColor) {
   return flowerPrice;
 }
 
-// Eduardo
-
-function updateMoney() {}
-
-// Victor
-
 function seedPrice(color) {
   if (color.toLowerCase() === "blue") {
     return 2;
@@ -269,11 +241,3 @@ function seedPrice(color) {
     return 20;
   }
 }
-
-// Sophia
-
-function selectSeed() {}
-
-// Zander
-
-function bankrupt() {}
