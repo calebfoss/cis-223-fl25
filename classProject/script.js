@@ -153,9 +153,19 @@ const moneyDisplay = canvas.text({
 // GAME
 
 function modifyMoney(amount) {
-  playerAmount += amount;
+  
+  if (amount > 0) {
+    playerAmount += amount;
+      alert("You earned " + amount + " whole dollars! Wow!")
+  } else if (amount < 0) {
+    playerAmount += amount;
+      alert("You were charged " + Math.abs(amount) + " dollars.")
+  } else {
+    
+  }
 
   moneyDisplay.textContent = "$" + playerAmount;
+  
 }
 
 function buySeed() {
