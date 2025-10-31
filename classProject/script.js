@@ -53,12 +53,16 @@ class Flower {
 
   bloom() {
     // Create flower image
+
     const sprite = canvas.image({
       source: "images/FLower 5/Flower 5 - " + this.color.toUpperCase() + ".png",
-      scale: 4,
+      height: this.waterCap*20, // instead of scaling the image, I found it better to set the height to the height of the stems! (scaling got weird)
     });
 
-    sprite.anchor = Vector2D.xy(this.x - sprite.width / 2, groundLevel - 100);
+    sprite.anchor = Vector2D.xy(
+      this.x-((sprite.width)/2), // added parentheses because they weren't computing in the right order.
+      groundLevel-(sprite.height)+(3*this.waterCap) // the 3*this.waterCap makes it so the base is always a little below the groundlevel for perspective. Remove this part if we would rather have the flowers resting on the ground.
+    );
 
     // Remove all of the stems
     while(this.stems.length > 0) {
