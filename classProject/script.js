@@ -229,6 +229,45 @@ function setFlowerPrice(flowerColor) {
   }
   return flowerPrice;
 }
+function seedPrice(color) {  
+
+let seedPrice;  
+
+  switch(color.toLowerCase()){  
+
+  case "blue":  
+
+    seedPrice=2;  
+
+  break;  
+
+  case "orange": 
+
+  seedPrice=4 
+
+break;  
+
+  case "pink": 
+
+  seedPrice=8 
+  break;  
+
+  case "purple": 
+
+seedPrice=20 
+
+break  
+
+  default:seedPrice=" you have not pick a flower "  
+
+  }  
+  
+return seedPrice 
+
+  } 
+
+
+
 
 function seedPrice(color) {
   if (color.toLowerCase() === "blue") {
