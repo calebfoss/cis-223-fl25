@@ -27,7 +27,8 @@ class Flower {
   constructor(color) {
     this.color = color;
 
-    this.x = Math.random() * canvas.width;
+    const margin = 100
+    this.x = margin + Math.random() * (canvas.width - 2 * margin);
 
     this.seed = canvas.ellipse({
       width: 10,
