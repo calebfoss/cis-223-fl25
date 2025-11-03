@@ -51,6 +51,14 @@ class Flower {
     this.timesWatered = 0;
 
     this.waterCap = Math.floor(Math.random() * (10 - 4 + 1)) + 4;
+    
+  }
+
+  everyFrame() {
+    const seedPos = this.seed.anchor;
+    if (seedPos >= ground.anchor) {
+	    this.seed.remove();
+    }
   }
 
   bloom() {
@@ -118,6 +126,8 @@ class Flower {
     // Put the new stem in the list of stems
     this.stems.push(stem);
   }
+
+
 }
 
 const waterButton = document.createElement("button");
@@ -213,6 +223,7 @@ function buySeed() {
 
   const flower = new Flower(selectedColor);
 
+  flower.everyFrame();
   flowers.push(flower);
 }
 
