@@ -153,15 +153,15 @@ const moneyDisplay = canvas.text({
 // GAME
 
 function modifyMoney(amount) {
+  playerAmount += amount;
+
   
   if (amount > 0) {
-    playerAmount += amount;
       alert("You earned " + amount + " whole dollars! Wow!")
   } else if (amount < 0) {
-    playerAmount += amount;
       alert("You were charged " + Math.abs(amount) + " dollars.")
   } else {
-    
+    throw new Error("modifyMoney was passed a 0 value");
   }
 
   moneyDisplay.textContent = "$" + playerAmount;
