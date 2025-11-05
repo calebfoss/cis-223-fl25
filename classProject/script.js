@@ -176,7 +176,7 @@ function buySeed() {
     let input = prompt(
       "What color of flower would you like to buy? (blue, orange, pink, purple)"
     );
-    if (input === null) {
+    if (input === null || input.trim() === "") {
       alert("Purchase cancelled.");
       return; // User cancelled prompt
     }
