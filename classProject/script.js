@@ -48,7 +48,7 @@ class Flower {
 
     this.timesWatered = 0;
 
-    this.waterCap = 5;
+    this.waterCap = Math.floor(Math.random() * (10 - 4 + 1)) + 4;
   }
 
   bloom() {
