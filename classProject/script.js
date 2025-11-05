@@ -58,7 +58,7 @@ class Flower {
       scale: 4,
     });
 
-    sprite.anchor = Vector2D.xy(this.x - sprite.width / 2, groundLevel - 100);
+    sprite.anchor = Vector2D.xy(this.x - (sprite.width/2) - 30, groundLevel - 100);
 
     // Remove all of the stems
     while(this.stems.length > 0) {
