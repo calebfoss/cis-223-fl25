@@ -232,18 +232,23 @@ waterButton.addEventListener("click", waterFlowers);
 function setFlowerPrice(flowerColor) {
   let flowerPrice = 0;
 
-  if (flowerColor === "blue") {
-    flowerPrice = 9;
-  } else if (flowerColor === "orange") {
-    flowerPrice = 7;
-  } else if (flowerColor === "pink") {
-    flowerPrice = 8;
-  } else if (flowerColor === "purple") {
-    flowerPrice = 10;
-  } else {
-    flowerPrice = 5;
+  switch (flowerColor){
+    case "blue":
+      flowerPrice=9;
+      break;
+    case "orange":
+      flowerPrice=7;
+      break;
+    case "pink":
+      flowerPrice=8;
+      break;
+    case "purple":
+      flowerPrice=10
+      break;
+    default:
+      flowerPrice=5;
   }
-  return flowerPrice;
+  return flowerPrice
 }
 function seedPrice(color) {  
   switch(color.toLowerCase().trim()){  
