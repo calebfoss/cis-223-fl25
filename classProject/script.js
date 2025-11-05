@@ -37,7 +37,16 @@ class Flower {
       fill: "tan",
       stroke: "none",
       anchor: Vector2D.xy(this.x, -20),
-      velocity: Vector2D.xy(0, 200)
+      velocity: Vector2D.xy(0, 200),
+      everyFrame() {
+        const seedYPos = this.anchor.y;
+
+        if (seedYPos >= groundLevel) {
+          this.remove();
+
+          canvas.queueRender();
+        }
+      }
     });
 
     // Put the seed before the ground to make it
@@ -54,12 +63,7 @@ class Flower {
     
   }
 
-  everyFrame() {
-    const seedPos = this.seed.anchor;
-    if (seedPos >= ground.anchor) {
-	    this.seed.remove();
-    }
-  }
+  
 
   bloom() {
     // Create flower image
@@ -223,7 +227,6 @@ function buySeed() {
 
   const flower = new Flower(selectedColor);
 
-  flower.everyFrame();
   flowers.push(flower);
 }
 
