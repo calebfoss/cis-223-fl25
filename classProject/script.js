@@ -243,15 +243,28 @@ function setFlowerPrice(flowerColor) {
   }
   return flowerPrice;
 }
+function seedPrice(color) {  
+  switch(color.toLowerCase().trim()){  
 
-function seedPrice(color) {
-  if (color.toLowerCase() === "blue") {
-    return 2;
-  } else if (color.toLowerCase() === "orange") {
-    return 4;
-  } else if (color.toLowerCase() === "pink") {
-    return 8;
-  } else if (color.toLowerCase() === "purple") {
-    return 20;
-  }
-}
+    case "blue":  
+
+      return 2;  
+
+    case "orange": 
+
+      return 4; 
+
+    case "pink": 
+
+      return 8; 
+  
+    case "purple": 
+
+      return 20; 
+
+    default:
+    
+      throw new Error(`Unsupported seed color ${color}`);
+
+  }  
+} 
