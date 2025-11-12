@@ -1,9 +1,6 @@
 import { Vector2D } from "../../classes/vector2d";
 import { CustomHTMLElement } from "../mixable";
 import { Canvas2DCanvasElement } from "./canvas";
-type EventListenerAdder = {
-    readonly [EventName in keyof HTMLElementEventMap]: (listener: TypedEventListener<EventName>) => void;
-};
 export declare class C2DBase extends CustomHTMLElement {
     #private;
     /**
@@ -21,15 +18,9 @@ export declare class C2DBase extends CustomHTMLElement {
      */
     get everyFrame(): Updater | null;
     set everyFrame(updater: Updater | null);
-    /**
-     * Interface for adding event listeners with alternative syntax. For example,
-     * element.addEventListener("click", listener) becomes
-     * element.listen.click(listener).
-     */
-    get listen(): EventListenerAdder;
+    remove(): void;
     /**
      * Scales a vector by the device's pixel ratio.
      */
     scaleByPixelRatio(vector: Vector2D): Vector2D;
 }
-export {};

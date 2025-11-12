@@ -3,7 +3,7 @@ import { DocumentContainerWrapper } from "./container";
 import { SVGSVGController } from "../visual/svgSVG";
 export declare function createHTMLElementWrapperConstructor<T extends keyof HTMLElementTagNameMap>(tag: T): {
     new (...args: any[]): {
-        "__#39@#element": HTMLElementTagNameMap[T];
+        "__#40@#element": HTMLElementTagNameMap[T];
         canvas2D(options?: Options<Canvas2DCanvasElement>): Canvas2DCanvasElement;
         createWrappedChild<T_1 extends keyof HTMLElementTagNameMap, W extends HTMLElementWrapperConstructor<T_1>>(WrapperConstructor: W, options?: Options<HTMLElementController<T_1, InstanceType<W>>>): HTMLElementController<T_1, InstanceType<W>>;
         readonly element: HTMLElementTagNameMap[T];

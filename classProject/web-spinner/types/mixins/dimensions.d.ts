@@ -2,8 +2,8 @@ import { CustomHTMLElement } from "../elements/mixable";
 import { SVGElementController } from "../elements/visual/svgBase";
 export declare function dimensions<B extends typeof CustomHTMLElement>(Base: B): {
     new (...args: any[]): {
-        "__#18@#width": number;
-        "__#18@#height": number;
+        "__#20@#width": number;
+        "__#20@#height": number;
         /**
          * Element's width in pixels.
          *
@@ -20,6 +20,10 @@ export declare function dimensions<B extends typeof CustomHTMLElement>(Base: B):
         height: number;
         attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -364,8 +368,8 @@ export declare function extendSVGDimensions<B extends SVGElementController & Ret
         connectedCallback(): void;
         height: number;
         width: number;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
-        "__#26@#group": SVGGElement | null;
+        "__#29@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#29@#group": SVGGElement | null;
         addEventListener: ((type: keyof SVGElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void) & {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
             (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
@@ -376,8 +380,8 @@ export declare function extendSVGDimensions<B extends SVGElementController & Ret
         };
         appendChild: (<T extends Node>(node: T) => T) & (<T extends Node>(node: T) => T);
         attributeChangedCallback: (() => void) & ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        "__#26@#attachMain"(): void;
-        "__#26@#createGroup"(): SVGGElement;
+        "__#29@#attachMain"(): void;
+        "__#29@#createGroup"(): SVGGElement;
         readonly group: SVGGElement | null;
         readonly mainElement: SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
         _setStyleAttribute(attributeName: string, value: string): void;
@@ -396,6 +400,8 @@ export declare function extendSVGDimensions<B extends SVGElementController & Ret
             readonly svgContainer?: SVGSVGElement | null;
             readonly svgContainerController?: import("../elements/visual/svgSVG").SVGSVGController | null;
             createChild?: string | undefined;
+            events?: EventListenerMap;
+            readonly listen?: EventListenerMap;
             registerChange?: string | undefined;
             accessKey?: string | undefined;
             readonly accessKeyLabel?: string | undefined;
@@ -709,6 +715,10 @@ export declare function extendSVGDimensions<B extends SVGElementController & Ret
         readonly svgContainer: SVGSVGElement | null;
         readonly svgContainerController: import("../elements/visual/svgSVG").SVGSVGController | null;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1039,8 +1049,8 @@ export declare function extendSVGDimensions<B extends SVGElementController & Ret
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#18@#width": number;
-        "__#18@#height": number;
+        "__#20@#width": number;
+        "__#20@#height": number;
     };
     observedAttributes: string[];
     tag: string;
@@ -1050,8 +1060,8 @@ export declare function svgDimensions<B extends SVGElementController>(Base: B): 
         connectedCallback(): void;
         height: number;
         width: number;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
-        "__#26@#group": SVGGElement | null;
+        "__#29@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#29@#group": SVGGElement | null;
         addEventListener: ((type: keyof SVGElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void) & {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
             (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
@@ -1062,8 +1072,8 @@ export declare function svgDimensions<B extends SVGElementController>(Base: B): 
         };
         appendChild: (<T extends Node>(node: T) => T) & (<T extends Node>(node: T) => T);
         attributeChangedCallback: (() => void) & ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
-        "__#26@#attachMain"(): void;
-        "__#26@#createGroup"(): SVGGElement;
+        "__#29@#attachMain"(): void;
+        "__#29@#createGroup"(): SVGGElement;
         readonly group: SVGGElement | null;
         readonly mainElement: SVGElementTagNameMap[T];
         _setStyleAttribute(attributeName: string, value: string): void;
@@ -1082,6 +1092,8 @@ export declare function svgDimensions<B extends SVGElementController>(Base: B): 
             readonly svgContainer?: SVGSVGElement | null;
             readonly svgContainerController?: import("../elements/visual/svgSVG").SVGSVGController | null;
             createChild?: string | undefined;
+            events?: EventListenerMap;
+            readonly listen?: EventListenerMap;
             registerChange?: string | undefined;
             accessKey?: string | undefined;
             readonly accessKeyLabel?: string | undefined;
@@ -1395,6 +1407,10 @@ export declare function svgDimensions<B extends SVGElementController>(Base: B): 
         readonly svgContainer: SVGSVGElement | null;
         readonly svgContainerController: import("../elements/visual/svgSVG").SVGSVGController | null;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1725,15 +1741,15 @@ export declare function svgDimensions<B extends SVGElementController>(Base: B): 
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#18@#width": number;
-        "__#18@#height": number;
+        "__#20@#width": number;
+        "__#20@#height": number;
     };
     observedAttributes: string[];
     tag: string;
 } & {
     new (...args: any[]): {
-        "__#18@#width": number;
-        "__#18@#height": number;
+        "__#20@#width": number;
+        "__#20@#height": number;
         /**
          * Element's width in pixels.
          *
@@ -1750,6 +1766,10 @@ export declare function svgDimensions<B extends SVGElementController>(Base: B): 
         height: number;
         attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;

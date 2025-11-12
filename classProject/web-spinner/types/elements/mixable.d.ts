@@ -1,4 +1,5 @@
 export declare class CustomHTMLElement extends HTMLElement {
+    #private;
     static observedAttributes: string[];
     static tag: string;
     constructor(...args: any[]);
@@ -7,6 +8,14 @@ export declare class CustomHTMLElement extends HTMLElement {
      * @private
      */
     createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Options<InstanceType<E>>): InstanceType<E>;
+    get events(): EventListenerMap;
+    set events(map: EventListenerMap);
+    /**
+     * Interface for adding event listeners with alternative syntax. For example,
+     * element.addEventListener("click", listener) becomes
+     * element.listen.click(listener).
+     */
+    get listen(): EventListenerMap;
     /**
      * @private
      */
