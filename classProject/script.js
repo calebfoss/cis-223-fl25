@@ -64,15 +64,6 @@ class Flower {
     
   }
 
-  everyFrame() {
-    const seedPos = this.seed.anchor;
-    if (seedPos >= ground.anchor) {
-	    this.seed.remove();
-    }
-  }
-
-  
-
   bloom() {
     // Create flower image
 
