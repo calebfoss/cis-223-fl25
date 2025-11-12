@@ -226,7 +226,6 @@ function buySeed() {
 
   const flower = new Flower(selectedColor);
 
-  flower.everyFrame();
   flowers.push(flower);
 }
 
