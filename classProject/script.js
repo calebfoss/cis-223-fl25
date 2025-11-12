@@ -61,6 +61,14 @@ class Flower {
 
     this.waterCap = Math.floor(Math.random() * (10 - 4 + 1)) + 4;
     
+    
+  }
+
+  everyFrame() {
+    const seedPos = this.seed.anchor;
+    if (seedPos >= ground.anchor) {
+	    this.seed.remove();
+    }
   }
 
   
@@ -227,6 +235,7 @@ function buySeed() {
 
   const flower = new Flower(selectedColor);
 
+  flower.everyFrame();
   flowers.push(flower);
 }
 
