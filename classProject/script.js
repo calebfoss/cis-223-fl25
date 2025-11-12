@@ -8,6 +8,8 @@ let playerAmount = 10;
 const flowers = [];
 
 const groundLevel = 200;
+const stemHeight = 20;
+const stemWidth = 10;
 /////////////////////////////
 
 /////////////////////////////
@@ -61,18 +63,27 @@ class Flower {
 
     this.waterCap = Math.floor(Math.random() * (10 - 4 + 1)) + 4;
     
-    
+    this.yDisplacement = this.waterCap * stemHeight / 2;
   }
 
   bloom() {
     // Create flower image
 
+
     const sprite = canvas.image({
       source: "images/FLower 5/Flower 5 - " + this.color.toUpperCase() + ".png",
-      height: this.waterCap*20, // instead of scaling the image, I found it better to set the height to the height of the stems! (scaling got weird)
+      height: this.waterCap * stemHeight, // instead of scaling the image, I found it better to set the height to the height of the stems! (scaling got weird)
     });
 
-    sprite.anchor = Vector2D.xy(this.x - (sprite.width/2) - 30, groundLevel - 100);
+    // Wait until image file loads to set its anchor because it is dependent on
+    // the file's width
+    sprite.mediaElement.addEventListener('load', () => {
+      sprite.anchor = Vector2D.xy(
+        this.x - sprite.width / 2 + stemWidth / 2,
+        groundLevel - sprite.height + this.yDisplacement
+      );
+    });
+  
 
     // Remove all of the stems
     while(this.stems.length > 0) {
@@ -113,14 +124,16 @@ class Flower {
     // If the flower has already bloomed, do nothing
     if(this.timesWatered >= this.waterCap) return;
 
-    const stemHeight = 20;
 
     const stem = canvas.rectangle({
-      width: 10,
+      width: stemWidth,
       height: stemHeight,
-      fill: 'green',
-      stroke: 'none',
-      anchor: Vector2D.xy(this.x, groundLevel - stemHeight * this.timesWatered)
+      fill: Color.hsl(120, 90, 40),
+      stroke: "none",
+      anchor: Vector2D.xy(
+        this.x,
+        groundLevel - stemHeight * this.timesWatered + this.yDisplacement
+      ),
     });
 
     // Put the new stem in the list of stems
@@ -139,7 +152,7 @@ waterButton.append("Water");
 
 // Create rectangle for ground
 const ground = canvas.rectangle({
-  fill: "green",
+  fill: Color.hsl(40, 40, 30),
   stroke: "none",
   anchor: Vector2D.xy(0, groundLevel),
   width: canvas.width,
