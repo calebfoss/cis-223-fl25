@@ -6,12 +6,12 @@ import { CustomHTMLElement } from "../elements/mixable";
 import { SVGElementController } from "../elements/visual/svgBase";
 export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: B): {
     new (...args: any[]): {
-        "__#22@#anchor": Vector2D;
-        "__#22@#angle": Angle;
-        "__#22@#angularVelocity": Angle;
-        "__#22@#scale": Vector2D;
-        "__#22@#velocity": Vector2D;
-        "__#22@#angleChangeListener": ChangeListener<number>;
+        "__#25@#anchor": Vector2D;
+        "__#25@#angle": Angle;
+        "__#25@#angularVelocity": Angle;
+        "__#25@#scale": Vector2D;
+        "__#25@#velocity": Vector2D;
+        "__#25@#angleChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation of the element around its anchor.
          *
@@ -19,8 +19,8 @@ export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: 
          * @reflect
          */
         angle: Angle;
-        "__#22@#angularVelocityChangedTime": number;
-        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
+        "__#25@#angularVelocityChangedTime": number;
+        "__#25@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -35,7 +35,7 @@ export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: 
          * @reflect
          */
         anchor: Vector2D;
-        "__#22@#anchorChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#anchorChangeListener": ChangeListener<Vector2DBase>;
         _applyMovement(deltaTime: number): void;
         attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void;
         moveAnchor(x: number, y: number): void;
@@ -47,7 +47,7 @@ export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: 
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
-        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -58,8 +58,8 @@ export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: 
          */
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
-        "__#22@#velocityChangedTime": number;
-        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#velocityChangedTime": number;
+        "__#25@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -68,6 +68,10 @@ export declare function baseTransform<B extends typeof CustomHTMLElement>(Base: 
          */
         velocity: Vector2D;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -411,12 +415,12 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
     new (...args: any[]): {
         render(canvas2D: Canvas2DCanvasElement): void;
         afterRender(canvas2D: Canvas2DCanvasElement): void;
-        "__#22@#anchor": Vector2D;
-        "__#22@#angle": Angle;
-        "__#22@#angularVelocity": Angle;
-        "__#22@#scale": Vector2D;
-        "__#22@#velocity": Vector2D;
-        "__#22@#angleChangeListener": ChangeListener<number>;
+        "__#25@#anchor": Vector2D;
+        "__#25@#angle": Angle;
+        "__#25@#angularVelocity": Angle;
+        "__#25@#scale": Vector2D;
+        "__#25@#velocity": Vector2D;
+        "__#25@#angleChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation of the element around its anchor.
          *
@@ -424,8 +428,8 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
          * @reflect
          */
         angle: Angle;
-        "__#22@#angularVelocityChangedTime": number;
-        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
+        "__#25@#angularVelocityChangedTime": number;
+        "__#25@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -440,7 +444,7 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
          * @reflect
          */
         anchor: Vector2D;
-        "__#22@#anchorChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#anchorChangeListener": ChangeListener<Vector2DBase>;
         _applyMovement(deltaTime: number): void;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
         moveAnchor(x: number, y: number): void;
@@ -452,7 +456,7 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
-        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -463,8 +467,8 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
          */
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
-        "__#22@#velocityChangedTime": number;
-        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#velocityChangedTime": number;
+        "__#25@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -473,6 +477,10 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
          */
         velocity: Vector2D;
         createChild: (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -502,11 +510,11 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
         addEventListener: {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
             (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        } & ((type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void);
+        } & (<E extends keyof HTMLElementEventMap>(type: E, listener: TypedEventListener<E>, options?: boolean | AddEventListenerOptions) => void);
         removeEventListener: {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
             (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-        } & ((type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void);
+        } & (<E extends keyof HTMLElementEventMap>(type: E, listener: TypedEventListener<E>, options?: boolean | AddEventListenerOptions) => void);
         readonly attributes: NamedNodeMap;
         readonly classList: DOMTokenList;
         className: string;
@@ -680,7 +688,7 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
         getAnimations(options?: GetAnimationsOptions): Animation[];
         after(...nodes: (Node | string)[]): void;
         before(...nodes: (Node | string)[]): void;
-        remove(): void;
+        remove: (() => void) & (() => void);
         replaceWith(...nodes: (Node | string)[]): void;
         readonly nextElementSibling: Element | null;
         readonly previousElementSibling: Element | null;
@@ -812,237 +820,29 @@ declare function c2dTransform<B extends ReturnType<typeof baseTransform<typeof C
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#29@#changedSinceRender": boolean;
-        "__#29@#clickListeners": Set<EventListenerOrEventListenerObject>;
-        "__#29@#localMouse": import("../classes/mouse").MouseData;
-        "__#29@#mouseListeners": Set<EventListenerOrEventListenerObject>;
-        "__#29@#shadow": import("..").Shadow | null;
+        "__#18@#changedSinceRender": boolean;
+        "__#18@#clickListeners": Set<TypedEventListener<"click">>;
+        "__#18@#localMouse": import("../classes/mouse").MouseData;
+        "__#18@#mouseListeners": Set<TypedEventListener<"mousemove">>;
+        "__#18@#shadow": import("..").Shadow | null;
+        "__#18@#connected": boolean;
+        "__#18@#queuedEventListeners": {
+            eventName: any;
+            listener: TypedEventListener<any>;
+        }[];
+        connectedCallback(): void;
         renderConicalGradient(context: CanvasRenderingContext2D, gradient: import("..").ConicalGradient): CanvasGradient;
         renderLinearGradient(context: CanvasRenderingContext2D, gradient: import("..").LinearGradient): CanvasGradient;
         renderRadialGradient(context: CanvasRenderingContext2D, gradient: import("..").RadialGradient): CanvasGradient;
         readonly changedSinceRender: boolean;
-        "__#29@#handleClick"(canvas2D: Canvas2DCanvasElement): void;
-        "__#29@#handleMouse"(canvas2D: Canvas2DCanvasElement): void;
+        "__#18@#handleClick"(canvas2D: Canvas2DCanvasElement): void;
+        "__#18@#handleMouse"(canvas2D: Canvas2DCanvasElement): void;
         renderChildren(canvas2D: Canvas2DCanvasElement): void;
-        "__#29@#shadowChangeListener": ChangeListener<import("..").Shadow>;
+        "__#18@#shadowChangeListener": ChangeListener<import("..").Shadow>;
         shadow: import("..").Shadow | null;
-        "__#9@#eventProxy": {
-            readonly fullscreenchange: (listener: TypedEventListener<"fullscreenchange">) => void;
-            readonly fullscreenerror: (listener: TypedEventListener<"fullscreenerror">) => void;
-            readonly abort: (listener: TypedEventListener<"abort">) => void;
-            readonly animationcancel: (listener: TypedEventListener<"animationcancel">) => void;
-            readonly animationend: (listener: TypedEventListener<"animationend">) => void;
-            readonly animationiteration: (listener: TypedEventListener<"animationiteration">) => void;
-            readonly animationstart: (listener: TypedEventListener<"animationstart">) => void;
-            readonly auxclick: (listener: TypedEventListener<"auxclick">) => void;
-            readonly beforeinput: (listener: TypedEventListener<"beforeinput">) => void;
-            readonly beforetoggle: (listener: TypedEventListener<"beforetoggle">) => void;
-            readonly blur: (listener: TypedEventListener<"blur">) => void;
-            readonly cancel: (listener: TypedEventListener<"cancel">) => void;
-            readonly canplay: (listener: TypedEventListener<"canplay">) => void;
-            readonly canplaythrough: (listener: TypedEventListener<"canplaythrough">) => void;
-            readonly change: (listener: TypedEventListener<"change">) => void;
-            readonly click: (listener: TypedEventListener<"click">) => void;
-            readonly close: (listener: TypedEventListener<"close">) => void;
-            readonly compositionend: (listener: TypedEventListener<"compositionend">) => void;
-            readonly compositionstart: (listener: TypedEventListener<"compositionstart">) => void;
-            readonly compositionupdate: (listener: TypedEventListener<"compositionupdate">) => void;
-            readonly contextlost: (listener: TypedEventListener<"contextlost">) => void;
-            readonly contextmenu: (listener: TypedEventListener<"contextmenu">) => void;
-            readonly contextrestored: (listener: TypedEventListener<"contextrestored">) => void;
-            readonly copy: (listener: TypedEventListener<"copy">) => void;
-            readonly cuechange: (listener: TypedEventListener<"cuechange">) => void;
-            readonly cut: (listener: TypedEventListener<"cut">) => void;
-            readonly dblclick: (listener: TypedEventListener<"dblclick">) => void;
-            readonly drag: (listener: TypedEventListener<"drag">) => void;
-            readonly dragend: (listener: TypedEventListener<"dragend">) => void;
-            readonly dragenter: (listener: TypedEventListener<"dragenter">) => void;
-            readonly dragleave: (listener: TypedEventListener<"dragleave">) => void;
-            readonly dragover: (listener: TypedEventListener<"dragover">) => void;
-            readonly dragstart: (listener: TypedEventListener<"dragstart">) => void;
-            readonly drop: (listener: TypedEventListener<"drop">) => void;
-            readonly durationchange: (listener: TypedEventListener<"durationchange">) => void;
-            readonly emptied: (listener: TypedEventListener<"emptied">) => void;
-            readonly ended: (listener: TypedEventListener<"ended">) => void;
-            readonly error: (listener: TypedEventListener<"error">) => void;
-            readonly focus: (listener: TypedEventListener<"focus">) => void;
-            readonly focusin: (listener: TypedEventListener<"focusin">) => void;
-            readonly focusout: (listener: TypedEventListener<"focusout">) => void;
-            readonly formdata: (listener: TypedEventListener<"formdata">) => void;
-            readonly gotpointercapture: (listener: TypedEventListener<"gotpointercapture">) => void;
-            readonly input: (listener: TypedEventListener<"input">) => void;
-            readonly invalid: (listener: TypedEventListener<"invalid">) => void;
-            readonly keydown: (listener: TypedEventListener<"keydown">) => void;
-            readonly keypress: (listener: TypedEventListener<"keypress">) => void;
-            readonly keyup: (listener: TypedEventListener<"keyup">) => void;
-            readonly load: (listener: TypedEventListener<"load">) => void;
-            readonly loadeddata: (listener: TypedEventListener<"loadeddata">) => void;
-            readonly loadedmetadata: (listener: TypedEventListener<"loadedmetadata">) => void;
-            readonly loadstart: (listener: TypedEventListener<"loadstart">) => void;
-            readonly lostpointercapture: (listener: TypedEventListener<"lostpointercapture">) => void;
-            readonly mousedown: (listener: TypedEventListener<"mousedown">) => void;
-            readonly mouseenter: (listener: TypedEventListener<"mouseenter">) => void;
-            readonly mouseleave: (listener: TypedEventListener<"mouseleave">) => void;
-            readonly mousemove: (listener: TypedEventListener<"mousemove">) => void;
-            readonly mouseout: (listener: TypedEventListener<"mouseout">) => void;
-            readonly mouseover: (listener: TypedEventListener<"mouseover">) => void;
-            readonly mouseup: (listener: TypedEventListener<"mouseup">) => void;
-            readonly paste: (listener: TypedEventListener<"paste">) => void;
-            readonly pause: (listener: TypedEventListener<"pause">) => void;
-            readonly play: (listener: TypedEventListener<"play">) => void;
-            readonly playing: (listener: TypedEventListener<"playing">) => void;
-            readonly pointercancel: (listener: TypedEventListener<"pointercancel">) => void;
-            readonly pointerdown: (listener: TypedEventListener<"pointerdown">) => void;
-            readonly pointerenter: (listener: TypedEventListener<"pointerenter">) => void;
-            readonly pointerleave: (listener: TypedEventListener<"pointerleave">) => void;
-            readonly pointermove: (listener: TypedEventListener<"pointermove">) => void;
-            readonly pointerout: (listener: TypedEventListener<"pointerout">) => void;
-            readonly pointerover: (listener: TypedEventListener<"pointerover">) => void;
-            readonly pointerup: (listener: TypedEventListener<"pointerup">) => void;
-            readonly progress: (listener: TypedEventListener<"progress">) => void;
-            readonly ratechange: (listener: TypedEventListener<"ratechange">) => void;
-            readonly reset: (listener: TypedEventListener<"reset">) => void;
-            readonly resize: (listener: TypedEventListener<"resize">) => void;
-            readonly scroll: (listener: TypedEventListener<"scroll">) => void;
-            readonly scrollend: (listener: TypedEventListener<"scrollend">) => void;
-            readonly securitypolicyviolation: (listener: TypedEventListener<"securitypolicyviolation">) => void;
-            readonly seeked: (listener: TypedEventListener<"seeked">) => void;
-            readonly seeking: (listener: TypedEventListener<"seeking">) => void;
-            readonly select: (listener: TypedEventListener<"select">) => void;
-            readonly selectionchange: (listener: TypedEventListener<"selectionchange">) => void;
-            readonly selectstart: (listener: TypedEventListener<"selectstart">) => void;
-            readonly slotchange: (listener: TypedEventListener<"slotchange">) => void;
-            readonly stalled: (listener: TypedEventListener<"stalled">) => void;
-            readonly submit: (listener: TypedEventListener<"submit">) => void;
-            readonly suspend: (listener: TypedEventListener<"suspend">) => void;
-            readonly timeupdate: (listener: TypedEventListener<"timeupdate">) => void;
-            readonly toggle: (listener: TypedEventListener<"toggle">) => void;
-            readonly touchcancel: (listener: TypedEventListener<"touchcancel">) => void;
-            readonly touchend: (listener: TypedEventListener<"touchend">) => void;
-            readonly touchmove: (listener: TypedEventListener<"touchmove">) => void;
-            readonly touchstart: (listener: TypedEventListener<"touchstart">) => void;
-            readonly transitioncancel: (listener: TypedEventListener<"transitioncancel">) => void;
-            readonly transitionend: (listener: TypedEventListener<"transitionend">) => void;
-            readonly transitionrun: (listener: TypedEventListener<"transitionrun">) => void;
-            readonly transitionstart: (listener: TypedEventListener<"transitionstart">) => void;
-            readonly volumechange: (listener: TypedEventListener<"volumechange">) => void;
-            readonly waiting: (listener: TypedEventListener<"waiting">) => void;
-            readonly webkitanimationend: (listener: TypedEventListener<"webkitanimationend">) => void;
-            readonly webkitanimationiteration: (listener: TypedEventListener<"webkitanimationiteration">) => void;
-            readonly webkitanimationstart: (listener: TypedEventListener<"webkitanimationstart">) => void;
-            readonly webkittransitionend: (listener: TypedEventListener<"webkittransitionend">) => void;
-            readonly wheel: (listener: TypedEventListener<"wheel">) => void;
-        };
-        "__#9@#everyFrame": Updater | null;
+        "__#10@#everyFrame": Updater | null;
         readonly canvas: Canvas2DCanvasElement;
         everyFrame: Updater | null;
-        readonly listen: {
-            readonly fullscreenchange: (listener: TypedEventListener<"fullscreenchange">) => void;
-            readonly fullscreenerror: (listener: TypedEventListener<"fullscreenerror">) => void;
-            readonly abort: (listener: TypedEventListener<"abort">) => void;
-            readonly animationcancel: (listener: TypedEventListener<"animationcancel">) => void;
-            readonly animationend: (listener: TypedEventListener<"animationend">) => void;
-            readonly animationiteration: (listener: TypedEventListener<"animationiteration">) => void;
-            readonly animationstart: (listener: TypedEventListener<"animationstart">) => void;
-            readonly auxclick: (listener: TypedEventListener<"auxclick">) => void;
-            readonly beforeinput: (listener: TypedEventListener<"beforeinput">) => void;
-            readonly beforetoggle: (listener: TypedEventListener<"beforetoggle">) => void;
-            readonly blur: (listener: TypedEventListener<"blur">) => void;
-            readonly cancel: (listener: TypedEventListener<"cancel">) => void;
-            readonly canplay: (listener: TypedEventListener<"canplay">) => void;
-            readonly canplaythrough: (listener: TypedEventListener<"canplaythrough">) => void;
-            readonly change: (listener: TypedEventListener<"change">) => void;
-            readonly click: (listener: TypedEventListener<"click">) => void;
-            readonly close: (listener: TypedEventListener<"close">) => void;
-            readonly compositionend: (listener: TypedEventListener<"compositionend">) => void;
-            readonly compositionstart: (listener: TypedEventListener<"compositionstart">) => void;
-            readonly compositionupdate: (listener: TypedEventListener<"compositionupdate">) => void;
-            readonly contextlost: (listener: TypedEventListener<"contextlost">) => void;
-            readonly contextmenu: (listener: TypedEventListener<"contextmenu">) => void;
-            readonly contextrestored: (listener: TypedEventListener<"contextrestored">) => void;
-            readonly copy: (listener: TypedEventListener<"copy">) => void;
-            readonly cuechange: (listener: TypedEventListener<"cuechange">) => void;
-            readonly cut: (listener: TypedEventListener<"cut">) => void;
-            readonly dblclick: (listener: TypedEventListener<"dblclick">) => void;
-            readonly drag: (listener: TypedEventListener<"drag">) => void;
-            readonly dragend: (listener: TypedEventListener<"dragend">) => void;
-            readonly dragenter: (listener: TypedEventListener<"dragenter">) => void;
-            readonly dragleave: (listener: TypedEventListener<"dragleave">) => void;
-            readonly dragover: (listener: TypedEventListener<"dragover">) => void;
-            readonly dragstart: (listener: TypedEventListener<"dragstart">) => void;
-            readonly drop: (listener: TypedEventListener<"drop">) => void;
-            readonly durationchange: (listener: TypedEventListener<"durationchange">) => void;
-            readonly emptied: (listener: TypedEventListener<"emptied">) => void;
-            readonly ended: (listener: TypedEventListener<"ended">) => void;
-            readonly error: (listener: TypedEventListener<"error">) => void;
-            readonly focus: (listener: TypedEventListener<"focus">) => void;
-            readonly focusin: (listener: TypedEventListener<"focusin">) => void;
-            readonly focusout: (listener: TypedEventListener<"focusout">) => void;
-            readonly formdata: (listener: TypedEventListener<"formdata">) => void;
-            readonly gotpointercapture: (listener: TypedEventListener<"gotpointercapture">) => void;
-            readonly input: (listener: TypedEventListener<"input">) => void;
-            readonly invalid: (listener: TypedEventListener<"invalid">) => void;
-            readonly keydown: (listener: TypedEventListener<"keydown">) => void;
-            readonly keypress: (listener: TypedEventListener<"keypress">) => void;
-            readonly keyup: (listener: TypedEventListener<"keyup">) => void;
-            readonly load: (listener: TypedEventListener<"load">) => void;
-            readonly loadeddata: (listener: TypedEventListener<"loadeddata">) => void;
-            readonly loadedmetadata: (listener: TypedEventListener<"loadedmetadata">) => void;
-            readonly loadstart: (listener: TypedEventListener<"loadstart">) => void;
-            readonly lostpointercapture: (listener: TypedEventListener<"lostpointercapture">) => void;
-            readonly mousedown: (listener: TypedEventListener<"mousedown">) => void;
-            readonly mouseenter: (listener: TypedEventListener<"mouseenter">) => void;
-            readonly mouseleave: (listener: TypedEventListener<"mouseleave">) => void;
-            readonly mousemove: (listener: TypedEventListener<"mousemove">) => void;
-            readonly mouseout: (listener: TypedEventListener<"mouseout">) => void;
-            readonly mouseover: (listener: TypedEventListener<"mouseover">) => void;
-            readonly mouseup: (listener: TypedEventListener<"mouseup">) => void;
-            readonly paste: (listener: TypedEventListener<"paste">) => void;
-            readonly pause: (listener: TypedEventListener<"pause">) => void;
-            readonly play: (listener: TypedEventListener<"play">) => void;
-            readonly playing: (listener: TypedEventListener<"playing">) => void;
-            readonly pointercancel: (listener: TypedEventListener<"pointercancel">) => void;
-            readonly pointerdown: (listener: TypedEventListener<"pointerdown">) => void;
-            readonly pointerenter: (listener: TypedEventListener<"pointerenter">) => void;
-            readonly pointerleave: (listener: TypedEventListener<"pointerleave">) => void;
-            readonly pointermove: (listener: TypedEventListener<"pointermove">) => void;
-            readonly pointerout: (listener: TypedEventListener<"pointerout">) => void;
-            readonly pointerover: (listener: TypedEventListener<"pointerover">) => void;
-            readonly pointerup: (listener: TypedEventListener<"pointerup">) => void;
-            readonly progress: (listener: TypedEventListener<"progress">) => void;
-            readonly ratechange: (listener: TypedEventListener<"ratechange">) => void;
-            readonly reset: (listener: TypedEventListener<"reset">) => void;
-            readonly resize: (listener: TypedEventListener<"resize">) => void;
-            readonly scroll: (listener: TypedEventListener<"scroll">) => void;
-            readonly scrollend: (listener: TypedEventListener<"scrollend">) => void;
-            readonly securitypolicyviolation: (listener: TypedEventListener<"securitypolicyviolation">) => void;
-            readonly seeked: (listener: TypedEventListener<"seeked">) => void;
-            readonly seeking: (listener: TypedEventListener<"seeking">) => void;
-            readonly select: (listener: TypedEventListener<"select">) => void;
-            readonly selectionchange: (listener: TypedEventListener<"selectionchange">) => void;
-            readonly selectstart: (listener: TypedEventListener<"selectstart">) => void;
-            readonly slotchange: (listener: TypedEventListener<"slotchange">) => void;
-            readonly stalled: (listener: TypedEventListener<"stalled">) => void;
-            readonly submit: (listener: TypedEventListener<"submit">) => void;
-            readonly suspend: (listener: TypedEventListener<"suspend">) => void;
-            readonly timeupdate: (listener: TypedEventListener<"timeupdate">) => void;
-            readonly toggle: (listener: TypedEventListener<"toggle">) => void;
-            readonly touchcancel: (listener: TypedEventListener<"touchcancel">) => void;
-            readonly touchend: (listener: TypedEventListener<"touchend">) => void;
-            readonly touchmove: (listener: TypedEventListener<"touchmove">) => void;
-            readonly touchstart: (listener: TypedEventListener<"touchstart">) => void;
-            readonly transitioncancel: (listener: TypedEventListener<"transitioncancel">) => void;
-            readonly transitionend: (listener: TypedEventListener<"transitionend">) => void;
-            readonly transitionrun: (listener: TypedEventListener<"transitionrun">) => void;
-            readonly transitionstart: (listener: TypedEventListener<"transitionstart">) => void;
-            readonly volumechange: (listener: TypedEventListener<"volumechange">) => void;
-            readonly waiting: (listener: TypedEventListener<"waiting">) => void;
-            readonly webkitanimationend: (listener: TypedEventListener<"webkitanimationend">) => void;
-            readonly webkitanimationiteration: (listener: TypedEventListener<"webkitanimationiteration">) => void;
-            readonly webkitanimationstart: (listener: TypedEventListener<"webkitanimationstart">) => void;
-            readonly webkittransitionend: (listener: TypedEventListener<"webkittransitionend">) => void;
-            readonly wheel: (listener: TypedEventListener<"wheel">) => void;
-        };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
     };
     observedAttributes: string[];
@@ -1053,12 +853,12 @@ declare const C2DStandaloneTransformed_base: {
     new (...args: any[]): {
         render(canvas2D: Canvas2DCanvasElement): void;
         afterRender(canvas2D: Canvas2DCanvasElement): void;
-        "__#22@#anchor": Vector2D;
-        "__#22@#angle": Angle;
-        "__#22@#angularVelocity": Angle;
-        "__#22@#scale": Vector2D;
-        "__#22@#velocity": Vector2D;
-        "__#22@#angleChangeListener": ChangeListener<number>;
+        "__#25@#anchor": Vector2D;
+        "__#25@#angle": Angle;
+        "__#25@#angularVelocity": Angle;
+        "__#25@#scale": Vector2D;
+        "__#25@#velocity": Vector2D;
+        "__#25@#angleChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation of the element around its anchor.
          *
@@ -1066,8 +866,8 @@ declare const C2DStandaloneTransformed_base: {
          * @reflect
          */
         angle: Angle;
-        "__#22@#angularVelocityChangedTime": number;
-        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
+        "__#25@#angularVelocityChangedTime": number;
+        "__#25@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -1082,7 +882,7 @@ declare const C2DStandaloneTransformed_base: {
          * @reflect
          */
         anchor: Vector2D;
-        "__#22@#anchorChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#anchorChangeListener": ChangeListener<Vector2DBase>;
         _applyMovement(deltaTime: number): void;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
         moveAnchor(x: number, y: number): void;
@@ -1094,7 +894,7 @@ declare const C2DStandaloneTransformed_base: {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
-        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -1105,8 +905,8 @@ declare const C2DStandaloneTransformed_base: {
          */
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
-        "__#22@#velocityChangedTime": number;
-        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#velocityChangedTime": number;
+        "__#25@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -1115,6 +915,10 @@ declare const C2DStandaloneTransformed_base: {
          */
         velocity: Vector2D;
         createChild: (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -1144,11 +948,11 @@ declare const C2DStandaloneTransformed_base: {
         addEventListener: {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
             (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        } & ((type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void);
+        } & (<E extends keyof HTMLElementEventMap>(type: E, listener: TypedEventListener<E>, options?: boolean | AddEventListenerOptions) => void);
         removeEventListener: {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
             (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-        } & ((type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void);
+        } & (<E extends keyof HTMLElementEventMap>(type: E, listener: TypedEventListener<E>, options?: boolean | AddEventListenerOptions) => void);
         readonly attributes: NamedNodeMap;
         readonly classList: DOMTokenList;
         className: string;
@@ -1322,7 +1126,7 @@ declare const C2DStandaloneTransformed_base: {
         getAnimations(options?: GetAnimationsOptions): Animation[];
         after(...nodes: (Node | string)[]): void;
         before(...nodes: (Node | string)[]): void;
-        remove(): void;
+        remove: (() => void) & (() => void);
         replaceWith(...nodes: (Node | string)[]): void;
         readonly nextElementSibling: Element | null;
         readonly previousElementSibling: Element | null;
@@ -1454,249 +1258,41 @@ declare const C2DStandaloneTransformed_base: {
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#29@#changedSinceRender": boolean;
-        "__#29@#clickListeners": Set<EventListenerOrEventListenerObject>;
-        "__#29@#localMouse": import("../classes/mouse").MouseData;
-        "__#29@#mouseListeners": Set<EventListenerOrEventListenerObject>;
-        "__#29@#shadow": import("..").Shadow | null;
+        "__#18@#changedSinceRender": boolean;
+        "__#18@#clickListeners": Set<TypedEventListener<"click">>;
+        "__#18@#localMouse": import("../classes/mouse").MouseData;
+        "__#18@#mouseListeners": Set<TypedEventListener<"mousemove">>;
+        "__#18@#shadow": import("..").Shadow | null;
+        "__#18@#connected": boolean;
+        "__#18@#queuedEventListeners": {
+            eventName: any;
+            listener: TypedEventListener<any>;
+        }[];
+        connectedCallback(): void;
         renderConicalGradient(context: CanvasRenderingContext2D, gradient: import("..").ConicalGradient): CanvasGradient;
         renderLinearGradient(context: CanvasRenderingContext2D, gradient: import("..").LinearGradient): CanvasGradient;
         renderRadialGradient(context: CanvasRenderingContext2D, gradient: import("..").RadialGradient): CanvasGradient;
         readonly changedSinceRender: boolean;
-        "__#29@#handleClick"(canvas2D: Canvas2DCanvasElement): void;
-        "__#29@#handleMouse"(canvas2D: Canvas2DCanvasElement): void;
+        "__#18@#handleClick"(canvas2D: Canvas2DCanvasElement): void;
+        "__#18@#handleMouse"(canvas2D: Canvas2DCanvasElement): void;
         renderChildren(canvas2D: Canvas2DCanvasElement): void;
-        "__#29@#shadowChangeListener": ChangeListener<import("..").Shadow>;
+        "__#18@#shadowChangeListener": ChangeListener<import("..").Shadow>;
         shadow: import("..").Shadow | null;
-        "__#9@#eventProxy": {
-            readonly fullscreenchange: (listener: TypedEventListener<"fullscreenchange">) => void;
-            readonly fullscreenerror: (listener: TypedEventListener<"fullscreenerror">) => void;
-            readonly abort: (listener: TypedEventListener<"abort">) => void;
-            readonly animationcancel: (listener: TypedEventListener<"animationcancel">) => void;
-            readonly animationend: (listener: TypedEventListener<"animationend">) => void;
-            readonly animationiteration: (listener: TypedEventListener<"animationiteration">) => void;
-            readonly animationstart: (listener: TypedEventListener<"animationstart">) => void;
-            readonly auxclick: (listener: TypedEventListener<"auxclick">) => void;
-            readonly beforeinput: (listener: TypedEventListener<"beforeinput">) => void;
-            readonly beforetoggle: (listener: TypedEventListener<"beforetoggle">) => void;
-            readonly blur: (listener: TypedEventListener<"blur">) => void;
-            readonly cancel: (listener: TypedEventListener<"cancel">) => void;
-            readonly canplay: (listener: TypedEventListener<"canplay">) => void;
-            readonly canplaythrough: (listener: TypedEventListener<"canplaythrough">) => void;
-            readonly change: (listener: TypedEventListener<"change">) => void;
-            readonly click: (listener: TypedEventListener<"click">) => void;
-            readonly close: (listener: TypedEventListener<"close">) => void;
-            readonly compositionend: (listener: TypedEventListener<"compositionend">) => void;
-            readonly compositionstart: (listener: TypedEventListener<"compositionstart">) => void;
-            readonly compositionupdate: (listener: TypedEventListener<"compositionupdate">) => void;
-            readonly contextlost: (listener: TypedEventListener<"contextlost">) => void;
-            readonly contextmenu: (listener: TypedEventListener<"contextmenu">) => void;
-            readonly contextrestored: (listener: TypedEventListener<"contextrestored">) => void;
-            readonly copy: (listener: TypedEventListener<"copy">) => void;
-            readonly cuechange: (listener: TypedEventListener<"cuechange">) => void;
-            readonly cut: (listener: TypedEventListener<"cut">) => void;
-            readonly dblclick: (listener: TypedEventListener<"dblclick">) => void;
-            readonly drag: (listener: TypedEventListener<"drag">) => void;
-            readonly dragend: (listener: TypedEventListener<"dragend">) => void;
-            readonly dragenter: (listener: TypedEventListener<"dragenter">) => void;
-            readonly dragleave: (listener: TypedEventListener<"dragleave">) => void;
-            readonly dragover: (listener: TypedEventListener<"dragover">) => void;
-            readonly dragstart: (listener: TypedEventListener<"dragstart">) => void;
-            readonly drop: (listener: TypedEventListener<"drop">) => void;
-            readonly durationchange: (listener: TypedEventListener<"durationchange">) => void;
-            readonly emptied: (listener: TypedEventListener<"emptied">) => void;
-            readonly ended: (listener: TypedEventListener<"ended">) => void;
-            readonly error: (listener: TypedEventListener<"error">) => void;
-            readonly focus: (listener: TypedEventListener<"focus">) => void;
-            readonly focusin: (listener: TypedEventListener<"focusin">) => void;
-            readonly focusout: (listener: TypedEventListener<"focusout">) => void;
-            readonly formdata: (listener: TypedEventListener<"formdata">) => void;
-            readonly gotpointercapture: (listener: TypedEventListener<"gotpointercapture">) => void;
-            readonly input: (listener: TypedEventListener<"input">) => void;
-            readonly invalid: (listener: TypedEventListener<"invalid">) => void;
-            readonly keydown: (listener: TypedEventListener<"keydown">) => void;
-            readonly keypress: (listener: TypedEventListener<"keypress">) => void;
-            readonly keyup: (listener: TypedEventListener<"keyup">) => void;
-            readonly load: (listener: TypedEventListener<"load">) => void;
-            readonly loadeddata: (listener: TypedEventListener<"loadeddata">) => void;
-            readonly loadedmetadata: (listener: TypedEventListener<"loadedmetadata">) => void;
-            readonly loadstart: (listener: TypedEventListener<"loadstart">) => void;
-            readonly lostpointercapture: (listener: TypedEventListener<"lostpointercapture">) => void;
-            readonly mousedown: (listener: TypedEventListener<"mousedown">) => void;
-            readonly mouseenter: (listener: TypedEventListener<"mouseenter">) => void;
-            readonly mouseleave: (listener: TypedEventListener<"mouseleave">) => void;
-            readonly mousemove: (listener: TypedEventListener<"mousemove">) => void;
-            readonly mouseout: (listener: TypedEventListener<"mouseout">) => void;
-            readonly mouseover: (listener: TypedEventListener<"mouseover">) => void;
-            readonly mouseup: (listener: TypedEventListener<"mouseup">) => void;
-            readonly paste: (listener: TypedEventListener<"paste">) => void;
-            readonly pause: (listener: TypedEventListener<"pause">) => void;
-            readonly play: (listener: TypedEventListener<"play">) => void;
-            readonly playing: (listener: TypedEventListener<"playing">) => void;
-            readonly pointercancel: (listener: TypedEventListener<"pointercancel">) => void;
-            readonly pointerdown: (listener: TypedEventListener<"pointerdown">) => void;
-            readonly pointerenter: (listener: TypedEventListener<"pointerenter">) => void;
-            readonly pointerleave: (listener: TypedEventListener<"pointerleave">) => void;
-            readonly pointermove: (listener: TypedEventListener<"pointermove">) => void;
-            readonly pointerout: (listener: TypedEventListener<"pointerout">) => void;
-            readonly pointerover: (listener: TypedEventListener<"pointerover">) => void;
-            readonly pointerup: (listener: TypedEventListener<"pointerup">) => void;
-            readonly progress: (listener: TypedEventListener<"progress">) => void;
-            readonly ratechange: (listener: TypedEventListener<"ratechange">) => void;
-            readonly reset: (listener: TypedEventListener<"reset">) => void;
-            readonly resize: (listener: TypedEventListener<"resize">) => void;
-            readonly scroll: (listener: TypedEventListener<"scroll">) => void;
-            readonly scrollend: (listener: TypedEventListener<"scrollend">) => void;
-            readonly securitypolicyviolation: (listener: TypedEventListener<"securitypolicyviolation">) => void;
-            readonly seeked: (listener: TypedEventListener<"seeked">) => void;
-            readonly seeking: (listener: TypedEventListener<"seeking">) => void;
-            readonly select: (listener: TypedEventListener<"select">) => void;
-            readonly selectionchange: (listener: TypedEventListener<"selectionchange">) => void;
-            readonly selectstart: (listener: TypedEventListener<"selectstart">) => void;
-            readonly slotchange: (listener: TypedEventListener<"slotchange">) => void;
-            readonly stalled: (listener: TypedEventListener<"stalled">) => void;
-            readonly submit: (listener: TypedEventListener<"submit">) => void;
-            readonly suspend: (listener: TypedEventListener<"suspend">) => void;
-            readonly timeupdate: (listener: TypedEventListener<"timeupdate">) => void;
-            readonly toggle: (listener: TypedEventListener<"toggle">) => void;
-            readonly touchcancel: (listener: TypedEventListener<"touchcancel">) => void;
-            readonly touchend: (listener: TypedEventListener<"touchend">) => void;
-            readonly touchmove: (listener: TypedEventListener<"touchmove">) => void;
-            readonly touchstart: (listener: TypedEventListener<"touchstart">) => void;
-            readonly transitioncancel: (listener: TypedEventListener<"transitioncancel">) => void;
-            readonly transitionend: (listener: TypedEventListener<"transitionend">) => void;
-            readonly transitionrun: (listener: TypedEventListener<"transitionrun">) => void;
-            readonly transitionstart: (listener: TypedEventListener<"transitionstart">) => void;
-            readonly volumechange: (listener: TypedEventListener<"volumechange">) => void;
-            readonly waiting: (listener: TypedEventListener<"waiting">) => void;
-            readonly webkitanimationend: (listener: TypedEventListener<"webkitanimationend">) => void;
-            readonly webkitanimationiteration: (listener: TypedEventListener<"webkitanimationiteration">) => void;
-            readonly webkitanimationstart: (listener: TypedEventListener<"webkitanimationstart">) => void;
-            readonly webkittransitionend: (listener: TypedEventListener<"webkittransitionend">) => void;
-            readonly wheel: (listener: TypedEventListener<"wheel">) => void;
-        };
-        "__#9@#everyFrame": Updater | null;
+        "__#10@#everyFrame": Updater | null;
         readonly canvas: Canvas2DCanvasElement;
         everyFrame: Updater | null;
-        readonly listen: {
-            readonly fullscreenchange: (listener: TypedEventListener<"fullscreenchange">) => void;
-            readonly fullscreenerror: (listener: TypedEventListener<"fullscreenerror">) => void;
-            readonly abort: (listener: TypedEventListener<"abort">) => void;
-            readonly animationcancel: (listener: TypedEventListener<"animationcancel">) => void;
-            readonly animationend: (listener: TypedEventListener<"animationend">) => void;
-            readonly animationiteration: (listener: TypedEventListener<"animationiteration">) => void;
-            readonly animationstart: (listener: TypedEventListener<"animationstart">) => void;
-            readonly auxclick: (listener: TypedEventListener<"auxclick">) => void;
-            readonly beforeinput: (listener: TypedEventListener<"beforeinput">) => void;
-            readonly beforetoggle: (listener: TypedEventListener<"beforetoggle">) => void;
-            readonly blur: (listener: TypedEventListener<"blur">) => void;
-            readonly cancel: (listener: TypedEventListener<"cancel">) => void;
-            readonly canplay: (listener: TypedEventListener<"canplay">) => void;
-            readonly canplaythrough: (listener: TypedEventListener<"canplaythrough">) => void;
-            readonly change: (listener: TypedEventListener<"change">) => void;
-            readonly click: (listener: TypedEventListener<"click">) => void;
-            readonly close: (listener: TypedEventListener<"close">) => void;
-            readonly compositionend: (listener: TypedEventListener<"compositionend">) => void;
-            readonly compositionstart: (listener: TypedEventListener<"compositionstart">) => void;
-            readonly compositionupdate: (listener: TypedEventListener<"compositionupdate">) => void;
-            readonly contextlost: (listener: TypedEventListener<"contextlost">) => void;
-            readonly contextmenu: (listener: TypedEventListener<"contextmenu">) => void;
-            readonly contextrestored: (listener: TypedEventListener<"contextrestored">) => void;
-            readonly copy: (listener: TypedEventListener<"copy">) => void;
-            readonly cuechange: (listener: TypedEventListener<"cuechange">) => void;
-            readonly cut: (listener: TypedEventListener<"cut">) => void;
-            readonly dblclick: (listener: TypedEventListener<"dblclick">) => void;
-            readonly drag: (listener: TypedEventListener<"drag">) => void;
-            readonly dragend: (listener: TypedEventListener<"dragend">) => void;
-            readonly dragenter: (listener: TypedEventListener<"dragenter">) => void;
-            readonly dragleave: (listener: TypedEventListener<"dragleave">) => void;
-            readonly dragover: (listener: TypedEventListener<"dragover">) => void;
-            readonly dragstart: (listener: TypedEventListener<"dragstart">) => void;
-            readonly drop: (listener: TypedEventListener<"drop">) => void;
-            readonly durationchange: (listener: TypedEventListener<"durationchange">) => void;
-            readonly emptied: (listener: TypedEventListener<"emptied">) => void;
-            readonly ended: (listener: TypedEventListener<"ended">) => void;
-            readonly error: (listener: TypedEventListener<"error">) => void;
-            readonly focus: (listener: TypedEventListener<"focus">) => void;
-            readonly focusin: (listener: TypedEventListener<"focusin">) => void;
-            readonly focusout: (listener: TypedEventListener<"focusout">) => void;
-            readonly formdata: (listener: TypedEventListener<"formdata">) => void;
-            readonly gotpointercapture: (listener: TypedEventListener<"gotpointercapture">) => void;
-            readonly input: (listener: TypedEventListener<"input">) => void;
-            readonly invalid: (listener: TypedEventListener<"invalid">) => void;
-            readonly keydown: (listener: TypedEventListener<"keydown">) => void;
-            readonly keypress: (listener: TypedEventListener<"keypress">) => void;
-            readonly keyup: (listener: TypedEventListener<"keyup">) => void;
-            readonly load: (listener: TypedEventListener<"load">) => void;
-            readonly loadeddata: (listener: TypedEventListener<"loadeddata">) => void;
-            readonly loadedmetadata: (listener: TypedEventListener<"loadedmetadata">) => void;
-            readonly loadstart: (listener: TypedEventListener<"loadstart">) => void;
-            readonly lostpointercapture: (listener: TypedEventListener<"lostpointercapture">) => void;
-            readonly mousedown: (listener: TypedEventListener<"mousedown">) => void;
-            readonly mouseenter: (listener: TypedEventListener<"mouseenter">) => void;
-            readonly mouseleave: (listener: TypedEventListener<"mouseleave">) => void;
-            readonly mousemove: (listener: TypedEventListener<"mousemove">) => void;
-            readonly mouseout: (listener: TypedEventListener<"mouseout">) => void;
-            readonly mouseover: (listener: TypedEventListener<"mouseover">) => void;
-            readonly mouseup: (listener: TypedEventListener<"mouseup">) => void;
-            readonly paste: (listener: TypedEventListener<"paste">) => void;
-            readonly pause: (listener: TypedEventListener<"pause">) => void;
-            readonly play: (listener: TypedEventListener<"play">) => void;
-            readonly playing: (listener: TypedEventListener<"playing">) => void;
-            readonly pointercancel: (listener: TypedEventListener<"pointercancel">) => void;
-            readonly pointerdown: (listener: TypedEventListener<"pointerdown">) => void;
-            readonly pointerenter: (listener: TypedEventListener<"pointerenter">) => void;
-            readonly pointerleave: (listener: TypedEventListener<"pointerleave">) => void;
-            readonly pointermove: (listener: TypedEventListener<"pointermove">) => void;
-            readonly pointerout: (listener: TypedEventListener<"pointerout">) => void;
-            readonly pointerover: (listener: TypedEventListener<"pointerover">) => void;
-            readonly pointerup: (listener: TypedEventListener<"pointerup">) => void;
-            readonly progress: (listener: TypedEventListener<"progress">) => void;
-            readonly ratechange: (listener: TypedEventListener<"ratechange">) => void;
-            readonly reset: (listener: TypedEventListener<"reset">) => void;
-            readonly resize: (listener: TypedEventListener<"resize">) => void;
-            readonly scroll: (listener: TypedEventListener<"scroll">) => void;
-            readonly scrollend: (listener: TypedEventListener<"scrollend">) => void;
-            readonly securitypolicyviolation: (listener: TypedEventListener<"securitypolicyviolation">) => void;
-            readonly seeked: (listener: TypedEventListener<"seeked">) => void;
-            readonly seeking: (listener: TypedEventListener<"seeking">) => void;
-            readonly select: (listener: TypedEventListener<"select">) => void;
-            readonly selectionchange: (listener: TypedEventListener<"selectionchange">) => void;
-            readonly selectstart: (listener: TypedEventListener<"selectstart">) => void;
-            readonly slotchange: (listener: TypedEventListener<"slotchange">) => void;
-            readonly stalled: (listener: TypedEventListener<"stalled">) => void;
-            readonly submit: (listener: TypedEventListener<"submit">) => void;
-            readonly suspend: (listener: TypedEventListener<"suspend">) => void;
-            readonly timeupdate: (listener: TypedEventListener<"timeupdate">) => void;
-            readonly toggle: (listener: TypedEventListener<"toggle">) => void;
-            readonly touchcancel: (listener: TypedEventListener<"touchcancel">) => void;
-            readonly touchend: (listener: TypedEventListener<"touchend">) => void;
-            readonly touchmove: (listener: TypedEventListener<"touchmove">) => void;
-            readonly touchstart: (listener: TypedEventListener<"touchstart">) => void;
-            readonly transitioncancel: (listener: TypedEventListener<"transitioncancel">) => void;
-            readonly transitionend: (listener: TypedEventListener<"transitionend">) => void;
-            readonly transitionrun: (listener: TypedEventListener<"transitionrun">) => void;
-            readonly transitionstart: (listener: TypedEventListener<"transitionstart">) => void;
-            readonly volumechange: (listener: TypedEventListener<"volumechange">) => void;
-            readonly waiting: (listener: TypedEventListener<"waiting">) => void;
-            readonly webkitanimationend: (listener: TypedEventListener<"webkitanimationend">) => void;
-            readonly webkitanimationiteration: (listener: TypedEventListener<"webkitanimationiteration">) => void;
-            readonly webkitanimationstart: (listener: TypedEventListener<"webkitanimationstart">) => void;
-            readonly webkittransitionend: (listener: TypedEventListener<"webkittransitionend">) => void;
-            readonly wheel: (listener: TypedEventListener<"wheel">) => void;
-        };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
     };
     observedAttributes: string[];
     tag: string;
 } & {
     new (...args: any[]): {
-        "__#22@#anchor": Vector2D;
-        "__#22@#angle": Angle;
-        "__#22@#angularVelocity": Angle;
-        "__#22@#scale": Vector2D;
-        "__#22@#velocity": Vector2D;
-        "__#22@#angleChangeListener": ChangeListener<number>;
+        "__#25@#anchor": Vector2D;
+        "__#25@#angle": Angle;
+        "__#25@#angularVelocity": Angle;
+        "__#25@#scale": Vector2D;
+        "__#25@#velocity": Vector2D;
+        "__#25@#angleChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation of the element around its anchor.
          *
@@ -1704,8 +1300,8 @@ declare const C2DStandaloneTransformed_base: {
          * @reflect
          */
         angle: Angle;
-        "__#22@#angularVelocityChangedTime": number;
-        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
+        "__#25@#angularVelocityChangedTime": number;
+        "__#25@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -1720,7 +1316,7 @@ declare const C2DStandaloneTransformed_base: {
          * @reflect
          */
         anchor: Vector2D;
-        "__#22@#anchorChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#anchorChangeListener": ChangeListener<Vector2DBase>;
         _applyMovement(deltaTime: number): void;
         attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void;
         moveAnchor(x: number, y: number): void;
@@ -1732,7 +1328,7 @@ declare const C2DStandaloneTransformed_base: {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
-        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -1743,8 +1339,8 @@ declare const C2DStandaloneTransformed_base: {
          */
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
-        "__#22@#velocityChangedTime": number;
-        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#velocityChangedTime": number;
+        "__#25@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -1753,6 +1349,10 @@ declare const C2DStandaloneTransformed_base: {
          */
         velocity: Vector2D;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -2098,12 +1698,12 @@ declare const C2DShapePartTransformed_base: {
     new (...args: any[]): {
         render(canvas2D: Canvas2DCanvasElement): void;
         afterRender(canvas2D: Canvas2DCanvasElement): void;
-        "__#22@#anchor": Vector2D;
-        "__#22@#angle": Angle;
-        "__#22@#angularVelocity": Angle;
-        "__#22@#scale": Vector2D;
-        "__#22@#velocity": Vector2D;
-        "__#22@#angleChangeListener": ChangeListener<number>;
+        "__#25@#anchor": Vector2D;
+        "__#25@#angle": Angle;
+        "__#25@#angularVelocity": Angle;
+        "__#25@#scale": Vector2D;
+        "__#25@#velocity": Vector2D;
+        "__#25@#angleChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation of the element around its anchor.
          *
@@ -2111,8 +1711,8 @@ declare const C2DShapePartTransformed_base: {
          * @reflect
          */
         angle: Angle;
-        "__#22@#angularVelocityChangedTime": number;
-        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
+        "__#25@#angularVelocityChangedTime": number;
+        "__#25@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -2127,7 +1727,7 @@ declare const C2DShapePartTransformed_base: {
          * @reflect
          */
         anchor: Vector2D;
-        "__#22@#anchorChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#anchorChangeListener": ChangeListener<Vector2DBase>;
         _applyMovement(deltaTime: number): void;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & ((name: string, oldValue: string | null, newValue: string | null) => void);
         moveAnchor(x: number, y: number): void;
@@ -2139,7 +1739,7 @@ declare const C2DShapePartTransformed_base: {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
-        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -2150,8 +1750,8 @@ declare const C2DShapePartTransformed_base: {
          */
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
-        "__#22@#velocityChangedTime": number;
-        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#velocityChangedTime": number;
+        "__#25@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -2160,6 +1760,10 @@ declare const C2DShapePartTransformed_base: {
          */
         velocity: Vector2D;
         createChild: (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>) & (<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined) => InstanceType<E>);
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange: (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void) & (<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]) => void);
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -2189,11 +1793,11 @@ declare const C2DShapePartTransformed_base: {
         addEventListener: {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
             (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
-        } & ((type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void);
+        } & (<E extends keyof HTMLElementEventMap>(type: E, listener: TypedEventListener<E>, options?: boolean | AddEventListenerOptions) => void);
         removeEventListener: {
             <K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
             (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
-        } & ((type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions) => void);
+        } & (<E extends keyof HTMLElementEventMap>(type: E, listener: TypedEventListener<E>, options?: boolean | AddEventListenerOptions) => void);
         readonly attributes: NamedNodeMap;
         readonly classList: DOMTokenList;
         className: string;
@@ -2367,7 +1971,7 @@ declare const C2DShapePartTransformed_base: {
         getAnimations(options?: GetAnimationsOptions): Animation[];
         after(...nodes: (Node | string)[]): void;
         before(...nodes: (Node | string)[]): void;
-        remove(): void;
+        remove: (() => void) & (() => void);
         replaceWith(...nodes: (Node | string)[]): void;
         readonly nextElementSibling: Element | null;
         readonly previousElementSibling: Element | null;
@@ -2499,249 +2103,41 @@ declare const C2DShapePartTransformed_base: {
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#29@#changedSinceRender": boolean;
-        "__#29@#clickListeners": Set<EventListenerOrEventListenerObject>;
-        "__#29@#localMouse": import("../classes/mouse").MouseData;
-        "__#29@#mouseListeners": Set<EventListenerOrEventListenerObject>;
-        "__#29@#shadow": import("..").Shadow | null;
+        "__#18@#changedSinceRender": boolean;
+        "__#18@#clickListeners": Set<TypedEventListener<"click">>;
+        "__#18@#localMouse": import("../classes/mouse").MouseData;
+        "__#18@#mouseListeners": Set<TypedEventListener<"mousemove">>;
+        "__#18@#shadow": import("..").Shadow | null;
+        "__#18@#connected": boolean;
+        "__#18@#queuedEventListeners": {
+            eventName: any;
+            listener: TypedEventListener<any>;
+        }[];
+        connectedCallback(): void;
         renderConicalGradient(context: CanvasRenderingContext2D, gradient: import("..").ConicalGradient): CanvasGradient;
         renderLinearGradient(context: CanvasRenderingContext2D, gradient: import("..").LinearGradient): CanvasGradient;
         renderRadialGradient(context: CanvasRenderingContext2D, gradient: import("..").RadialGradient): CanvasGradient;
         readonly changedSinceRender: boolean;
-        "__#29@#handleClick"(canvas2D: Canvas2DCanvasElement): void;
-        "__#29@#handleMouse"(canvas2D: Canvas2DCanvasElement): void;
+        "__#18@#handleClick"(canvas2D: Canvas2DCanvasElement): void;
+        "__#18@#handleMouse"(canvas2D: Canvas2DCanvasElement): void;
         renderChildren(canvas2D: Canvas2DCanvasElement): void;
-        "__#29@#shadowChangeListener": ChangeListener<import("..").Shadow>;
+        "__#18@#shadowChangeListener": ChangeListener<import("..").Shadow>;
         shadow: import("..").Shadow | null;
-        "__#9@#eventProxy": {
-            readonly fullscreenchange: (listener: TypedEventListener<"fullscreenchange">) => void;
-            readonly fullscreenerror: (listener: TypedEventListener<"fullscreenerror">) => void;
-            readonly abort: (listener: TypedEventListener<"abort">) => void;
-            readonly animationcancel: (listener: TypedEventListener<"animationcancel">) => void;
-            readonly animationend: (listener: TypedEventListener<"animationend">) => void;
-            readonly animationiteration: (listener: TypedEventListener<"animationiteration">) => void;
-            readonly animationstart: (listener: TypedEventListener<"animationstart">) => void;
-            readonly auxclick: (listener: TypedEventListener<"auxclick">) => void;
-            readonly beforeinput: (listener: TypedEventListener<"beforeinput">) => void;
-            readonly beforetoggle: (listener: TypedEventListener<"beforetoggle">) => void;
-            readonly blur: (listener: TypedEventListener<"blur">) => void;
-            readonly cancel: (listener: TypedEventListener<"cancel">) => void;
-            readonly canplay: (listener: TypedEventListener<"canplay">) => void;
-            readonly canplaythrough: (listener: TypedEventListener<"canplaythrough">) => void;
-            readonly change: (listener: TypedEventListener<"change">) => void;
-            readonly click: (listener: TypedEventListener<"click">) => void;
-            readonly close: (listener: TypedEventListener<"close">) => void;
-            readonly compositionend: (listener: TypedEventListener<"compositionend">) => void;
-            readonly compositionstart: (listener: TypedEventListener<"compositionstart">) => void;
-            readonly compositionupdate: (listener: TypedEventListener<"compositionupdate">) => void;
-            readonly contextlost: (listener: TypedEventListener<"contextlost">) => void;
-            readonly contextmenu: (listener: TypedEventListener<"contextmenu">) => void;
-            readonly contextrestored: (listener: TypedEventListener<"contextrestored">) => void;
-            readonly copy: (listener: TypedEventListener<"copy">) => void;
-            readonly cuechange: (listener: TypedEventListener<"cuechange">) => void;
-            readonly cut: (listener: TypedEventListener<"cut">) => void;
-            readonly dblclick: (listener: TypedEventListener<"dblclick">) => void;
-            readonly drag: (listener: TypedEventListener<"drag">) => void;
-            readonly dragend: (listener: TypedEventListener<"dragend">) => void;
-            readonly dragenter: (listener: TypedEventListener<"dragenter">) => void;
-            readonly dragleave: (listener: TypedEventListener<"dragleave">) => void;
-            readonly dragover: (listener: TypedEventListener<"dragover">) => void;
-            readonly dragstart: (listener: TypedEventListener<"dragstart">) => void;
-            readonly drop: (listener: TypedEventListener<"drop">) => void;
-            readonly durationchange: (listener: TypedEventListener<"durationchange">) => void;
-            readonly emptied: (listener: TypedEventListener<"emptied">) => void;
-            readonly ended: (listener: TypedEventListener<"ended">) => void;
-            readonly error: (listener: TypedEventListener<"error">) => void;
-            readonly focus: (listener: TypedEventListener<"focus">) => void;
-            readonly focusin: (listener: TypedEventListener<"focusin">) => void;
-            readonly focusout: (listener: TypedEventListener<"focusout">) => void;
-            readonly formdata: (listener: TypedEventListener<"formdata">) => void;
-            readonly gotpointercapture: (listener: TypedEventListener<"gotpointercapture">) => void;
-            readonly input: (listener: TypedEventListener<"input">) => void;
-            readonly invalid: (listener: TypedEventListener<"invalid">) => void;
-            readonly keydown: (listener: TypedEventListener<"keydown">) => void;
-            readonly keypress: (listener: TypedEventListener<"keypress">) => void;
-            readonly keyup: (listener: TypedEventListener<"keyup">) => void;
-            readonly load: (listener: TypedEventListener<"load">) => void;
-            readonly loadeddata: (listener: TypedEventListener<"loadeddata">) => void;
-            readonly loadedmetadata: (listener: TypedEventListener<"loadedmetadata">) => void;
-            readonly loadstart: (listener: TypedEventListener<"loadstart">) => void;
-            readonly lostpointercapture: (listener: TypedEventListener<"lostpointercapture">) => void;
-            readonly mousedown: (listener: TypedEventListener<"mousedown">) => void;
-            readonly mouseenter: (listener: TypedEventListener<"mouseenter">) => void;
-            readonly mouseleave: (listener: TypedEventListener<"mouseleave">) => void;
-            readonly mousemove: (listener: TypedEventListener<"mousemove">) => void;
-            readonly mouseout: (listener: TypedEventListener<"mouseout">) => void;
-            readonly mouseover: (listener: TypedEventListener<"mouseover">) => void;
-            readonly mouseup: (listener: TypedEventListener<"mouseup">) => void;
-            readonly paste: (listener: TypedEventListener<"paste">) => void;
-            readonly pause: (listener: TypedEventListener<"pause">) => void;
-            readonly play: (listener: TypedEventListener<"play">) => void;
-            readonly playing: (listener: TypedEventListener<"playing">) => void;
-            readonly pointercancel: (listener: TypedEventListener<"pointercancel">) => void;
-            readonly pointerdown: (listener: TypedEventListener<"pointerdown">) => void;
-            readonly pointerenter: (listener: TypedEventListener<"pointerenter">) => void;
-            readonly pointerleave: (listener: TypedEventListener<"pointerleave">) => void;
-            readonly pointermove: (listener: TypedEventListener<"pointermove">) => void;
-            readonly pointerout: (listener: TypedEventListener<"pointerout">) => void;
-            readonly pointerover: (listener: TypedEventListener<"pointerover">) => void;
-            readonly pointerup: (listener: TypedEventListener<"pointerup">) => void;
-            readonly progress: (listener: TypedEventListener<"progress">) => void;
-            readonly ratechange: (listener: TypedEventListener<"ratechange">) => void;
-            readonly reset: (listener: TypedEventListener<"reset">) => void;
-            readonly resize: (listener: TypedEventListener<"resize">) => void;
-            readonly scroll: (listener: TypedEventListener<"scroll">) => void;
-            readonly scrollend: (listener: TypedEventListener<"scrollend">) => void;
-            readonly securitypolicyviolation: (listener: TypedEventListener<"securitypolicyviolation">) => void;
-            readonly seeked: (listener: TypedEventListener<"seeked">) => void;
-            readonly seeking: (listener: TypedEventListener<"seeking">) => void;
-            readonly select: (listener: TypedEventListener<"select">) => void;
-            readonly selectionchange: (listener: TypedEventListener<"selectionchange">) => void;
-            readonly selectstart: (listener: TypedEventListener<"selectstart">) => void;
-            readonly slotchange: (listener: TypedEventListener<"slotchange">) => void;
-            readonly stalled: (listener: TypedEventListener<"stalled">) => void;
-            readonly submit: (listener: TypedEventListener<"submit">) => void;
-            readonly suspend: (listener: TypedEventListener<"suspend">) => void;
-            readonly timeupdate: (listener: TypedEventListener<"timeupdate">) => void;
-            readonly toggle: (listener: TypedEventListener<"toggle">) => void;
-            readonly touchcancel: (listener: TypedEventListener<"touchcancel">) => void;
-            readonly touchend: (listener: TypedEventListener<"touchend">) => void;
-            readonly touchmove: (listener: TypedEventListener<"touchmove">) => void;
-            readonly touchstart: (listener: TypedEventListener<"touchstart">) => void;
-            readonly transitioncancel: (listener: TypedEventListener<"transitioncancel">) => void;
-            readonly transitionend: (listener: TypedEventListener<"transitionend">) => void;
-            readonly transitionrun: (listener: TypedEventListener<"transitionrun">) => void;
-            readonly transitionstart: (listener: TypedEventListener<"transitionstart">) => void;
-            readonly volumechange: (listener: TypedEventListener<"volumechange">) => void;
-            readonly waiting: (listener: TypedEventListener<"waiting">) => void;
-            readonly webkitanimationend: (listener: TypedEventListener<"webkitanimationend">) => void;
-            readonly webkitanimationiteration: (listener: TypedEventListener<"webkitanimationiteration">) => void;
-            readonly webkitanimationstart: (listener: TypedEventListener<"webkitanimationstart">) => void;
-            readonly webkittransitionend: (listener: TypedEventListener<"webkittransitionend">) => void;
-            readonly wheel: (listener: TypedEventListener<"wheel">) => void;
-        };
-        "__#9@#everyFrame": Updater | null;
+        "__#10@#everyFrame": Updater | null;
         readonly canvas: Canvas2DCanvasElement;
         everyFrame: Updater | null;
-        readonly listen: {
-            readonly fullscreenchange: (listener: TypedEventListener<"fullscreenchange">) => void;
-            readonly fullscreenerror: (listener: TypedEventListener<"fullscreenerror">) => void;
-            readonly abort: (listener: TypedEventListener<"abort">) => void;
-            readonly animationcancel: (listener: TypedEventListener<"animationcancel">) => void;
-            readonly animationend: (listener: TypedEventListener<"animationend">) => void;
-            readonly animationiteration: (listener: TypedEventListener<"animationiteration">) => void;
-            readonly animationstart: (listener: TypedEventListener<"animationstart">) => void;
-            readonly auxclick: (listener: TypedEventListener<"auxclick">) => void;
-            readonly beforeinput: (listener: TypedEventListener<"beforeinput">) => void;
-            readonly beforetoggle: (listener: TypedEventListener<"beforetoggle">) => void;
-            readonly blur: (listener: TypedEventListener<"blur">) => void;
-            readonly cancel: (listener: TypedEventListener<"cancel">) => void;
-            readonly canplay: (listener: TypedEventListener<"canplay">) => void;
-            readonly canplaythrough: (listener: TypedEventListener<"canplaythrough">) => void;
-            readonly change: (listener: TypedEventListener<"change">) => void;
-            readonly click: (listener: TypedEventListener<"click">) => void;
-            readonly close: (listener: TypedEventListener<"close">) => void;
-            readonly compositionend: (listener: TypedEventListener<"compositionend">) => void;
-            readonly compositionstart: (listener: TypedEventListener<"compositionstart">) => void;
-            readonly compositionupdate: (listener: TypedEventListener<"compositionupdate">) => void;
-            readonly contextlost: (listener: TypedEventListener<"contextlost">) => void;
-            readonly contextmenu: (listener: TypedEventListener<"contextmenu">) => void;
-            readonly contextrestored: (listener: TypedEventListener<"contextrestored">) => void;
-            readonly copy: (listener: TypedEventListener<"copy">) => void;
-            readonly cuechange: (listener: TypedEventListener<"cuechange">) => void;
-            readonly cut: (listener: TypedEventListener<"cut">) => void;
-            readonly dblclick: (listener: TypedEventListener<"dblclick">) => void;
-            readonly drag: (listener: TypedEventListener<"drag">) => void;
-            readonly dragend: (listener: TypedEventListener<"dragend">) => void;
-            readonly dragenter: (listener: TypedEventListener<"dragenter">) => void;
-            readonly dragleave: (listener: TypedEventListener<"dragleave">) => void;
-            readonly dragover: (listener: TypedEventListener<"dragover">) => void;
-            readonly dragstart: (listener: TypedEventListener<"dragstart">) => void;
-            readonly drop: (listener: TypedEventListener<"drop">) => void;
-            readonly durationchange: (listener: TypedEventListener<"durationchange">) => void;
-            readonly emptied: (listener: TypedEventListener<"emptied">) => void;
-            readonly ended: (listener: TypedEventListener<"ended">) => void;
-            readonly error: (listener: TypedEventListener<"error">) => void;
-            readonly focus: (listener: TypedEventListener<"focus">) => void;
-            readonly focusin: (listener: TypedEventListener<"focusin">) => void;
-            readonly focusout: (listener: TypedEventListener<"focusout">) => void;
-            readonly formdata: (listener: TypedEventListener<"formdata">) => void;
-            readonly gotpointercapture: (listener: TypedEventListener<"gotpointercapture">) => void;
-            readonly input: (listener: TypedEventListener<"input">) => void;
-            readonly invalid: (listener: TypedEventListener<"invalid">) => void;
-            readonly keydown: (listener: TypedEventListener<"keydown">) => void;
-            readonly keypress: (listener: TypedEventListener<"keypress">) => void;
-            readonly keyup: (listener: TypedEventListener<"keyup">) => void;
-            readonly load: (listener: TypedEventListener<"load">) => void;
-            readonly loadeddata: (listener: TypedEventListener<"loadeddata">) => void;
-            readonly loadedmetadata: (listener: TypedEventListener<"loadedmetadata">) => void;
-            readonly loadstart: (listener: TypedEventListener<"loadstart">) => void;
-            readonly lostpointercapture: (listener: TypedEventListener<"lostpointercapture">) => void;
-            readonly mousedown: (listener: TypedEventListener<"mousedown">) => void;
-            readonly mouseenter: (listener: TypedEventListener<"mouseenter">) => void;
-            readonly mouseleave: (listener: TypedEventListener<"mouseleave">) => void;
-            readonly mousemove: (listener: TypedEventListener<"mousemove">) => void;
-            readonly mouseout: (listener: TypedEventListener<"mouseout">) => void;
-            readonly mouseover: (listener: TypedEventListener<"mouseover">) => void;
-            readonly mouseup: (listener: TypedEventListener<"mouseup">) => void;
-            readonly paste: (listener: TypedEventListener<"paste">) => void;
-            readonly pause: (listener: TypedEventListener<"pause">) => void;
-            readonly play: (listener: TypedEventListener<"play">) => void;
-            readonly playing: (listener: TypedEventListener<"playing">) => void;
-            readonly pointercancel: (listener: TypedEventListener<"pointercancel">) => void;
-            readonly pointerdown: (listener: TypedEventListener<"pointerdown">) => void;
-            readonly pointerenter: (listener: TypedEventListener<"pointerenter">) => void;
-            readonly pointerleave: (listener: TypedEventListener<"pointerleave">) => void;
-            readonly pointermove: (listener: TypedEventListener<"pointermove">) => void;
-            readonly pointerout: (listener: TypedEventListener<"pointerout">) => void;
-            readonly pointerover: (listener: TypedEventListener<"pointerover">) => void;
-            readonly pointerup: (listener: TypedEventListener<"pointerup">) => void;
-            readonly progress: (listener: TypedEventListener<"progress">) => void;
-            readonly ratechange: (listener: TypedEventListener<"ratechange">) => void;
-            readonly reset: (listener: TypedEventListener<"reset">) => void;
-            readonly resize: (listener: TypedEventListener<"resize">) => void;
-            readonly scroll: (listener: TypedEventListener<"scroll">) => void;
-            readonly scrollend: (listener: TypedEventListener<"scrollend">) => void;
-            readonly securitypolicyviolation: (listener: TypedEventListener<"securitypolicyviolation">) => void;
-            readonly seeked: (listener: TypedEventListener<"seeked">) => void;
-            readonly seeking: (listener: TypedEventListener<"seeking">) => void;
-            readonly select: (listener: TypedEventListener<"select">) => void;
-            readonly selectionchange: (listener: TypedEventListener<"selectionchange">) => void;
-            readonly selectstart: (listener: TypedEventListener<"selectstart">) => void;
-            readonly slotchange: (listener: TypedEventListener<"slotchange">) => void;
-            readonly stalled: (listener: TypedEventListener<"stalled">) => void;
-            readonly submit: (listener: TypedEventListener<"submit">) => void;
-            readonly suspend: (listener: TypedEventListener<"suspend">) => void;
-            readonly timeupdate: (listener: TypedEventListener<"timeupdate">) => void;
-            readonly toggle: (listener: TypedEventListener<"toggle">) => void;
-            readonly touchcancel: (listener: TypedEventListener<"touchcancel">) => void;
-            readonly touchend: (listener: TypedEventListener<"touchend">) => void;
-            readonly touchmove: (listener: TypedEventListener<"touchmove">) => void;
-            readonly touchstart: (listener: TypedEventListener<"touchstart">) => void;
-            readonly transitioncancel: (listener: TypedEventListener<"transitioncancel">) => void;
-            readonly transitionend: (listener: TypedEventListener<"transitionend">) => void;
-            readonly transitionrun: (listener: TypedEventListener<"transitionrun">) => void;
-            readonly transitionstart: (listener: TypedEventListener<"transitionstart">) => void;
-            readonly volumechange: (listener: TypedEventListener<"volumechange">) => void;
-            readonly waiting: (listener: TypedEventListener<"waiting">) => void;
-            readonly webkitanimationend: (listener: TypedEventListener<"webkitanimationend">) => void;
-            readonly webkitanimationiteration: (listener: TypedEventListener<"webkitanimationiteration">) => void;
-            readonly webkitanimationstart: (listener: TypedEventListener<"webkitanimationstart">) => void;
-            readonly webkittransitionend: (listener: TypedEventListener<"webkittransitionend">) => void;
-            readonly wheel: (listener: TypedEventListener<"wheel">) => void;
-        };
         scaleByPixelRatio(vector: Vector2D): Vector2D;
     };
     observedAttributes: string[];
     tag: string;
 } & {
     new (...args: any[]): {
-        "__#22@#anchor": Vector2D;
-        "__#22@#angle": Angle;
-        "__#22@#angularVelocity": Angle;
-        "__#22@#scale": Vector2D;
-        "__#22@#velocity": Vector2D;
-        "__#22@#angleChangeListener": ChangeListener<number>;
+        "__#25@#anchor": Vector2D;
+        "__#25@#angle": Angle;
+        "__#25@#angularVelocity": Angle;
+        "__#25@#scale": Vector2D;
+        "__#25@#velocity": Vector2D;
+        "__#25@#angleChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation of the element around its anchor.
          *
@@ -2749,8 +2145,8 @@ declare const C2DShapePartTransformed_base: {
          * @reflect
          */
         angle: Angle;
-        "__#22@#angularVelocityChangedTime": number;
-        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
+        "__#25@#angularVelocityChangedTime": number;
+        "__#25@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -2765,7 +2161,7 @@ declare const C2DShapePartTransformed_base: {
          * @reflect
          */
         anchor: Vector2D;
-        "__#22@#anchorChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#anchorChangeListener": ChangeListener<Vector2DBase>;
         _applyMovement(deltaTime: number): void;
         attributeChangedCallback(name: string, oldValue: string | null, newValue: string | null): void;
         moveAnchor(x: number, y: number): void;
@@ -2777,7 +2173,7 @@ declare const C2DShapePartTransformed_base: {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
-        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -2788,8 +2184,8 @@ declare const C2DShapePartTransformed_base: {
          */
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
-        "__#22@#velocityChangedTime": number;
-        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#velocityChangedTime": number;
+        "__#25@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -2798,6 +2194,10 @@ declare const C2DShapePartTransformed_base: {
          */
         velocity: Vector2D;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -3142,18 +2542,18 @@ export declare class C2DShapePartTransformed extends C2DShapePartTransformed_bas
 export declare function svgTransform<B extends SVGElementController>(Base: B): {
     new (...args: any[]): {
         anchor: Vector2D;
-        "__#23@#angleChangeListener": () => void;
+        "__#26@#angleChangeListener": () => void;
         angle: Angle;
         connectedCallback(): void;
-        "__#23@#updateTransformAttribute"(): void;
-        "__#22@#anchor": Vector2D;
-        "__#22@#angle": Angle;
-        "__#22@#angularVelocity": Angle;
-        "__#22@#scale": Vector2D;
-        "__#22@#velocity": Vector2D;
-        "__#22@#angleChangeListener": ChangeListener<number>;
-        "__#22@#angularVelocityChangedTime": number;
-        "__#22@#angularVelocityChangeListener": ChangeListener<number>;
+        "__#26@#updateTransformAttribute"(): void;
+        "__#25@#anchor": Vector2D;
+        "__#25@#angle": Angle;
+        "__#25@#angularVelocity": Angle;
+        "__#25@#scale": Vector2D;
+        "__#25@#velocity": Vector2D;
+        "__#25@#angleChangeListener": ChangeListener<number>;
+        "__#25@#angularVelocityChangedTime": number;
+        "__#25@#angularVelocityChangeListener": ChangeListener<number>;
         /**
          * Clockwise rotation per second.
          *
@@ -3161,7 +2561,7 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
          * @reflect
          */
         angularVelocity: Angle;
-        "__#22@#anchorChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#anchorChangeListener": ChangeListener<Vector2DBase>;
         _applyMovement(deltaTime: number): void;
         attributeChangedCallback: ((name: string, oldValue: string | null, newValue: string | null) => void) & (() => void);
         moveAnchor(x: number, y: number): void;
@@ -3173,7 +2573,7 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
          * @param angle - Angle to turn the element in the counterclockwise direction.
          */
         rotateCounterclockwise(angle: Angle): void;
-        "__#22@#scaleChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#scaleChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Multiplies the size of the element in the x and y direction. This also affects
          * line width. Setting scale to a number will set both the x and y scale to that
@@ -3184,8 +2584,8 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
          */
         get scale(): Vector2D;
         set scale(value: Vector2D | number);
-        "__#22@#velocityChangedTime": number;
-        "__#22@#velocityChangeListener": ChangeListener<Vector2DBase>;
+        "__#25@#velocityChangedTime": number;
+        "__#25@#velocityChangeListener": ChangeListener<Vector2DBase>;
         /**
          * Anchor movement per second.
          *
@@ -3194,6 +2594,10 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
          */
         velocity: Vector2D;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;
@@ -3533,10 +2937,10 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
         tabIndex: number;
         blur(): void;
         focus(options?: FocusOptions): void;
-        "__#26@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
-        "__#26@#group": SVGGElement | null;
-        "__#26@#attachMain"(): void;
-        "__#26@#createGroup"(): SVGGElement;
+        "__#29@#main": SVGStopElement | SVGLinearGradientElement | SVGSVGElement | SVGRadialGradientElement | SVGGElement | SVGSymbolElement | SVGEllipseElement | SVGImageElement | SVGLineElement | SVGTextElement | SVGTitleElement | SVGAnimateElement | SVGStyleElement | SVGAElement | SVGScriptElement | SVGAnimateMotionElement | SVGAnimateTransformElement | SVGCircleElement | SVGClipPathElement | SVGDefsElement | SVGDescElement | SVGFEBlendElement | SVGFEColorMatrixElement | SVGFEComponentTransferElement | SVGFECompositeElement | SVGFEConvolveMatrixElement | SVGFEDiffuseLightingElement | SVGFEDisplacementMapElement | SVGFEDistantLightElement | SVGFEDropShadowElement | SVGFEFloodElement | SVGFEFuncAElement | SVGFEFuncBElement | SVGFEFuncGElement | SVGFEFuncRElement | SVGFEGaussianBlurElement | SVGFEImageElement | SVGFEMergeElement | SVGFEMergeNodeElement | SVGFEMorphologyElement | SVGFEOffsetElement | SVGFEPointLightElement | SVGFESpecularLightingElement | SVGFESpotLightElement | SVGFETileElement | SVGFETurbulenceElement | SVGFilterElement | SVGForeignObjectElement | SVGMarkerElement | SVGMaskElement | SVGMetadataElement | SVGMPathElement | SVGPathElement | SVGPatternElement | SVGPolygonElement | SVGPolylineElement | SVGRectElement | SVGSetElement | SVGSwitchElement | SVGTextPathElement | SVGTSpanElement | SVGUseElement | SVGViewElement;
+        "__#29@#group": SVGGElement | null;
+        "__#29@#attachMain"(): void;
+        "__#29@#createGroup"(): SVGGElement;
         readonly group: SVGGElement | null;
         readonly mainElement: SVGElementTagNameMap[T];
         _setStyleAttribute(attributeName: string, value: string): void;
@@ -3553,6 +2957,8 @@ export declare function svgTransform<B extends SVGElementController>(Base: B): {
             scale?: Vector2D;
             velocity?: Vector2D;
             createChild?: string | undefined;
+            events?: EventListenerMap;
+            readonly listen?: EventListenerMap;
             registerChange?: string | undefined;
             accessKey?: string | undefined;
             readonly accessKeyLabel?: string | undefined;

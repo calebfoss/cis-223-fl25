@@ -2,15 +2,15 @@ import { CustomHTMLElement } from "../mixable";
 import { SVGSVGController } from "./svgSVG";
 export declare function createSVGController<T extends keyof SVGElementTagNameMap>(svgTag: T, controllerTag: string): {
     new (...args: any[]): {
-        "__#26@#main": SVGElementTagNameMap[T];
-        "__#26@#group": SVGGElement | null;
+        "__#29@#main": SVGElementTagNameMap[T];
+        "__#29@#group": SVGGElement | null;
         addEventListener(type: keyof SVGElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
         removeEventListener(type: keyof HTMLElementEventMap, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
         appendChild<T_1 extends Node>(node: T_1): T_1;
         attributeChangedCallback(): void;
-        "__#26@#attachMain"(): void;
+        "__#29@#attachMain"(): void;
         connectedCallback(): void;
-        "__#26@#createGroup"(): SVGGElement;
+        "__#29@#createGroup"(): SVGGElement;
         readonly group: SVGGElement | null;
         readonly mainElement: SVGElementTagNameMap[T];
         /**
@@ -30,6 +30,8 @@ export declare function createSVGController<T extends keyof SVGElementTagNameMap
             readonly svgContainer?: SVGSVGElement | null;
             readonly svgContainerController?: SVGSVGController | null;
             createChild?: string | undefined;
+            events?: EventListenerMap;
+            readonly listen?: EventListenerMap;
             registerChange?: string | undefined;
             accessKey?: string | undefined;
             readonly accessKeyLabel?: string | undefined;
@@ -343,6 +345,10 @@ export declare function createSVGController<T extends keyof SVGElementTagNameMap
         readonly svgContainer: SVGSVGElement | null;
         readonly svgContainerController: SVGSVGController | null;
         createChild<E extends typeof CustomHTMLElement>(ElementClass: E, options?: Partial<Writeable<InstanceType<E>>> | undefined): InstanceType<E>;
+        "__#8@#eventListeners": Map<keyof HTMLElementEventMap, EventListener>;
+        "__#8@#eventsProxy": EventListenerMap;
+        events: EventListenerMap;
+        readonly listen: EventListenerMap;
         registerChange<P extends keyof /*elided*/ any>(propertyName: P, newValue: /*elided*/ any[P]): void;
         accessKey: string;
         readonly accessKeyLabel: string;

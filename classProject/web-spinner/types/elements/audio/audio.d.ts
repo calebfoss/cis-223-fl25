@@ -1,47 +1,47 @@
 import { HTMLElementController } from "../document/domBase";
 declare const HTMLAudioWrapper_base: {
     new (...args: any[]): {
-        "__#39@#element": HTMLAudioElement;
+        "__#40@#element": HTMLAudioElement;
         canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
         createWrappedChild<T extends keyof HTMLElementTagNameMap, W extends {
             new (...args: any[]): {
-                "__#39@#element": HTMLElementTagNameMap[T];
+                "__#40@#element": HTMLElementTagNameMap[T];
                 canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                 createWrappedChild<T_1 extends keyof HTMLElementTagNameMap, W_1 extends {
                     new (...args: any[]): {
-                        "__#39@#element": HTMLElementTagNameMap[T_1];
+                        "__#40@#element": HTMLElementTagNameMap[T_1];
                         canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                         createWrappedChild<T_2 extends keyof HTMLElementTagNameMap, W_2 extends {
                             new (...args: any[]): {
-                                "__#39@#element": HTMLElementTagNameMap[T_2];
+                                "__#40@#element": HTMLElementTagNameMap[T_2];
                                 canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                                 createWrappedChild<T_3 extends keyof HTMLElementTagNameMap, W_3 extends {
                                     new (...args: any[]): {
-                                        "__#39@#element": HTMLElementTagNameMap[T_3];
+                                        "__#40@#element": HTMLElementTagNameMap[T_3];
                                         canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                                         createWrappedChild<T_4 extends keyof HTMLElementTagNameMap, W_4 extends {
                                             new (...args: any[]): {
-                                                "__#39@#element": HTMLElementTagNameMap[T_4];
+                                                "__#40@#element": HTMLElementTagNameMap[T_4];
                                                 canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                                                 createWrappedChild<T_5 extends keyof HTMLElementTagNameMap, W_5 extends {
                                                     new (...args: any[]): {
-                                                        "__#39@#element": HTMLElementTagNameMap[T_5];
+                                                        "__#40@#element": HTMLElementTagNameMap[T_5];
                                                         canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                                                         createWrappedChild<T_6 extends keyof HTMLElementTagNameMap, W_6 extends {
                                                             new (...args: any[]): {
-                                                                "__#39@#element": HTMLElementTagNameMap[T_6];
+                                                                "__#40@#element": HTMLElementTagNameMap[T_6];
                                                                 canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                                                                 createWrappedChild<T_7 extends keyof HTMLElementTagNameMap, W_7 extends {
                                                                     new (...args: any[]): {
-                                                                        "__#39@#element": HTMLElementTagNameMap[T_7];
+                                                                        "__#40@#element": HTMLElementTagNameMap[T_7];
                                                                         canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                                                                         createWrappedChild<T_8 extends keyof HTMLElementTagNameMap, W_8 extends {
                                                                             new (...args: any[]): {
-                                                                                "__#39@#element": HTMLElementTagNameMap[T_8];
+                                                                                "__#40@#element": HTMLElementTagNameMap[T_8];
                                                                                 canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                                                                                 createWrappedChild<T_9 extends keyof HTMLElementTagNameMap, W_9 extends {
                                                                                     new (...args: any[]): {
-                                                                                        "__#39@#element": HTMLElementTagNameMap[T_9];
+                                                                                        "__#40@#element": HTMLElementTagNameMap[T_9];
                                                                                         canvas2D(options?: Options<import("../visual/canvas").Canvas2DCanvasElement>): import("../visual/canvas").Canvas2DCanvasElement;
                                                                                         createWrappedChild<T_10 extends keyof HTMLElementTagNameMap, W_10 extends /*elided*/ any>(WrapperConstructor: W_10, options?: Partial<Writeable<HTMLElementController<T_10, InstanceType<W_10>>>> | undefined): HTMLElementController<T_10, InstanceType<W_10>>;
                                                                                         readonly element: HTMLElementTagNameMap[T_9];
