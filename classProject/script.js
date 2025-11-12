@@ -37,7 +37,16 @@ class Flower {
       fill: "tan",
       stroke: "none",
       anchor: Vector2D.xy(this.x, -20),
-      velocity: Vector2D.xy(0, 200)
+      velocity: Vector2D.xy(0, 200),
+      everyFrame() {
+        const seedYPos = this.anchor.y;
+
+        if (seedYPos >= groundLevel) {
+          this.remove();
+
+          canvas.queueRender();
+        }
+      }
     });
 
     // Put the seed before the ground to make it
@@ -51,6 +60,8 @@ class Flower {
     this.timesWatered = 0;
 
     this.waterCap = Math.floor(Math.random() * (10 - 4 + 1)) + 4;
+    
+    
   }
 
   bloom() {
@@ -118,6 +129,8 @@ class Flower {
     // Put the new stem in the list of stems
     this.stems.push(stem);
   }
+
+
 }
 
 const waterButton = document.createElement("button");
